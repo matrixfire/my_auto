@@ -1,0 +1,673 @@
+**1.1 Web前端开发概述**：
+1. **Web前端开发定义**：
+   - 定义：Web前端开发指网页上为用户呈现的部分的开发编写代码工作，以网站形式呈现，通过浏览器访问，完成特定功能的系统。
+   - 组成部分：前端负责网页上的展示，后端则与数据库交互，完成数据存取等操作。
+2. **Web系统架构**：
+   - 角色分工：网站架构师、网页美工、前端开发人员等共同协作完成Web系统开发。
+   - 示例：提到电商网站、综合门户网站、管理系统等不同类型的Web系统。
+3. **HTML基础示例**：
+   - 示例代码：展示了简单的HTML页面结构，包括`<head>`和`<body>`部分，以及基本的标签如`<meta>`, `<link>`, `<title>`, `<div>`, `<ul>`, `<li>`, `<a>`等。
+
+**1.2 网站与网页概述**：
+1. **网站与网页的基本概念**：
+   - 网站：互联网上用于展示特定内容的相关网页的集合。
+   - 网页：网站中的一页，通过超链接组织在一起。
+2. **网页元素**：
+   - 元素：表单、导航栏、Logo、站标文字、超链接、banner等构成网页的基本元素。
+   - 主页：进入网站首先看到的页面，文件名通常为index。
+3. **服务器与网页文件**：
+   - 网站架构：解释了服务器、网站文件夹、网页文件之间的关系，以及它们在网站运行中的作用。
+
+**1.3 Web前端技术概述**：
+1. **前端技术构成**：
+   - 结构：HTML，从语义的角度描述页面结构。
+   - 样式：CSS，从审美的角度美化页面。
+   - 行为：JavaScript，从交互的角度提升用户体验。
+2. **前端技术标准**：
+   - 标准化组织：万维网联盟（W3C）负责制定Web标准。
+   - 标准内容：HTML5、CSS3、JavaScript等是当前Web前端开发的主要标准和技术。
+3. **学习资源**：
+   - 推荐了W3C的官方网站（www.w3.org）和W3Schools教程（http://www.w3school.com.cn/）作为前端技术学习的资源。
+
+这三篇文件共同构成了对Web前端开发及其相关概念、技术和标准的全面概述，从定义、架构、技术构成到学习资源，为初学者提供了系统的入门指南。
+
+
+**3.1 CSS概述**
+1. **CSS概念**：
+   - CSS全称为Cascading Style Sheets（层叠样式表），用于控制网页的布局和样式。
+   - 核心特点：内容和样式相分离，便于网站维护和内容更新。
+
+2. **CSS样式应用**：
+   - 相同的HTML内容可以通过不同的CSS样式展现出不同的视觉效果。
+   - 示例：通过CSS控制文字颜色、字体大小、加粗等属性，使页面更加美观和个性化。
+
+3. **CSS语法**：
+   - 基本结构：选择器{属性: 值;}，如`p {font-size:12px; color:blue;}`。
+   - 属性值后需加分号`;`，最后一条声明可省略分号但建议加上。
+
+**3.2 CSS添加方法**
+1. **行内样式**：
+   - 直接在HTML元素内使用`style`属性定义样式，如`<p style="color:red;">`。
+   - 适用于单个元素的快速样式调整。
+
+2. **内嵌样式**：
+   - 在HTML文档的`<head>`部分使用`<style>`标签定义样式，适用于单个页面。
+   - 示例：`<style>p{color:red;}</style>`。
+
+3. **外部样式表**：
+   - 将CSS代码保存在外部文件中，通过`<link>`标签在HTML中引入。
+   - 适用于多个页面的统一样式管理，便于网站整体风格的统一和维护。
+
+4. **样式优先级**：
+   - 样式优先级顺序：行内样式 > 内嵌样式 > 外部样式 > 浏览器默认样式。
+   - 当多个样式冲突时，优先级高的样式将覆盖优先级低的样式。
+
+**3.3 CSS选择器**
+1. **基本选择器**：
+   - ID选择器（`#id`）：通过元素的ID选择，如`#left`。
+   - 类选择器（`.class`）：通过元素的class属性选择，如`.big`。
+   - 元素选择器（`tag`）：通过HTML标签名选择，如`p`。
+
+2. **高级选择器**：
+   - 后代选择器（`A B`）：选择A元素内部的所有B元素，如`p strong`。
+   - 子元素选择器（`A > B`）：选择A元素的直接子元素B，如`p > strong`。
+   - 相邻兄弟选择器（`A + B`）：选择紧接在A元素之后的同级B元素，如`h2 + p`。
+
+3. **属性选择器**：
+   - 根据元素的属性及属性值来选择元素，如`img[src*="user_fig"]`。
+
+4. **伪类选择器**：
+   - 用于选择处于特定状态的元素，如`:hover`、`:first-child`、`:nth-child(n)`等。
+
+5. **伪元素选择器**：
+   - 用于向文档中的特定位置插入内容并应用样式，如`::before`、`::after`、`::first-letter`、`::first-line`等。
+
+**3-4 CSS样式(I)文本样式**
+1. **文本属性**：
+   - `color`：设置文本颜色。
+   - `font-size`：设置字体大小。
+   - `font-weight`：设置字体粗细。
+   - `letter-spacing`：设置字符间距。
+   - `line-height`：设置行高。
+   - `text-align`：设置文本对齐方式。
+   - `text-decoration`：设置文本装饰线，如下划线、删除线等。
+
+2. **字体与单位**：
+   - `font-family`：设置字体系列。
+   - 支持多种单位，包括像素（px）、em、百分比（%）等。
+
+3. **颜色表示**：
+   - 支持颜色名（如red、blue）、RGB值（如rgb(255,0,0)）、十六进制数（如#ff0000）等多种颜色表示方式。
+
+**3-5 CSS样式(II)背景 超链接**
+1. **背景属性**：
+   - `background-color`：设置背景颜色。
+   - `background-image`：设置背景图像。
+   - `background-repeat`：设置背景图像是否重复及重复方式。
+
+2. **超链接样式**：
+   - 支持定义超链接的四种状态：`:link`（未访问）、`:visited`（已访问）、`:hover`（鼠标悬停）、`:active`（激活状态）。
+   - 可以通过伪类选择器为不同状态的超链接设置不同的样式。
+
+**3-6 CSS样式(III)列表 表格**
+1. **列表样式**：
+   - `list-style-type`：设置列表项标记的类型，如disc、circle、square等。
+   - `list-style-position`：设置列表项标记的位置，如inside、outside。
+   - `list-style-image`：使用图像作为列表项标记。
+
+2. **表格样式**：
+   - 通过`border`属性设置表格边框。
+   - 使用`width`和`height`属性设置表格的宽度和高度。
+   - `border-collapse`属性用于设置表格边框是否合并为一个单一的边框。
+
+3. **表格样式进阶**：
+   - 可以使用`:nth-child(odd|even)`选择器为表格的奇数行或偶数行设置不同的样式。
+   - 通过CSS可以精确控制表格的外观，包括边框颜色、宽度、单元格间距等。
+   
+   
+   
+**4-1 CSS布局与定位概述**
+1. **CSS布局与定位概述**：
+   - 核心概念：介绍了CSS在网页布局与元素定位中的基础作用，是网页设计的基石。
+   - 页面元素：提及了常见的页面元素如header、navbar、footer、menu、content、sidebar等，它们在网页布局中扮演着不同角色。
+   - 盒子模型：强调了盒子模型在CSS布局中的重要性，它决定了元素的大小、边距、边框和内边距。
+   - 定位机制：简述了文档流、浮动定位、层定位等CSS定位机制。
+
+**4-2 盒子模型(I)**
+1. **盒子模型构成**：
+   - 内容(content)、内边距(padding)、边框(border)、外边距(margin)共同构成了CSS中的盒子模型。
+   - 具体实例：通过具体CSS代码示例，展示了如何设置元素的宽度、高度、边框、内边距和外边距。
+   - overflow属性：介绍了overflow属性的三个值（hidden、scroll、auto）及其作用，用于处理元素内容溢出的情况。
+   - border属性：详细说明了border-color、border-width、border-style等属性的用法，并通过实例展示了水平分割线的实现。
+
+**4-3 盒子模型(II)**
+1. **padding和margin的详细解析**：
+   - padding属性：详细解释了padding的上下左右各个方向的设置方式，包括使用百分比值作为内边距的情况。
+   - margin属性：介绍了margin的合并现象，特别是在垂直方向上的合并，并通过实例展示了margin的多种简写方式。
+   - 水平居中：通过text-align:center和margin:0 auto实现了文本和块级元素的水平居中。
+   - 案例：通过新闻图片列表的案例，展示了如何利用padding、margin等属性进行布局调整。
+
+**4-4 定位机制概述**
+1. **CSS定位机制分类**：
+   - 文档流：元素按照其在HTML文档中的位置顺序排列。
+   - 浮动定位：通过float属性使元素脱离文档流并向左或向右浮动。
+   - 层定位：使用position属性（fixed、relative、absolute）进行精确布局。
+
+**4-5 文档流定位**
+1. **元素分类与类型转换**：
+   - block元素：独占一行，可设置宽度、高度、内边距和边框。
+   - inline元素：不单独占用一行，宽高不可设置，适用于文本、链接等。
+   - inline-block元素：结合了inline和block元素的特点，不独占一行且可设置宽高。
+   - display属性：用于转换元素的显示类型，如将inline元素转换为block元素。
+
+**4-6 浮动定位**
+1. **float属性与clear属性**：
+   - float属性：使元素脱离文档流并向左或向右浮动，适用于实现多栏布局。
+   - float特点：浮动元素会影响周围元素的布局，且浮动元素之间可能存在“卡住”现象。
+   - clear属性：用于清除浮动对后续元素的影响，可设置left、right、both等值。
+   - 案例：通过具体实例展示了如何利用float和clear属性实现复杂布局。
+
+**4-7 层定位**
+1. **position属性详解**：
+   - fixed定位：元素相对于浏览器窗口定位，不会随页面滚动而移动。
+   - relative定位：元素相对于其正常位置进行偏移，但原位置仍保留在文档流中。
+   - absolute定位：元素脱离文档流，相对于最近的已定位（非static）祖先元素定位。
+   - top、bottom、left、right属性：用于精确指定元素的位置。
+   - z-index属性：控制层叠上下文中元素的堆叠顺序。
+
+**4-8 弹性盒子布局**
+1. **Flexbox布局特点**：
+   - 一维布局：适用于按行或列对元素进行布局。
+   - 弹性伸缩：元素可根据可用空间自动拉伸或收缩。
+   - 核心属性：包括display:flex、flex-direction、flex-wrap、justify-content、align-items等。
+   - 案例：通过实例展示了如何利用Flexbox实现复杂布局，如垂直居中、间隙平均分配等。
+
+**4-9 网格布局**
+1. **Grid布局简介**：
+   - 二维布局：通过行和列划分网格区域，实现更复杂的页面布局。
+   - 核心属性：包括display:grid、grid-template-columns、grid-template-rows、grid-gap等。
+   - 区域命名与定位：通过grid-template-areas属性为网格区域命名，并通过grid-area属性指定元素所在的区域。
+   - 对齐属性：justify-items、align-items等属性用于控制网格元素的对齐方式。
+   - 案例：通过实例展示了如何利用Grid布局实现响应式网页设计。
+   
+   
+   **5-1 CSS3(I)圆角边框与阴影**
+1. **圆角边框border-radius**：
+   - 属性定义：CSS3中引入的`border-radius`属性用于设置元素边框的圆角效果。
+   - 子属性：包括`border-top-left-radius`、`border-top-right-radius`、`border-bottom-left-radius`、`border-bottom-right-radius`，可分别设置四角的圆角大小。
+   - 浏览器支持：不同浏览器需要前缀（如`-webkit-`、`-moz-`）以支持该属性，在标准确定后逐步去掉前缀。
+   - 示例代码：展示了如何为一个`div`元素设置圆角边框。
+
+2. **阴影box-shadow**：
+   - 属性定义：`box-shadow`属性用于在元素周围添加阴影效果。
+   - 参数：包括水平偏移、垂直偏移、模糊距离、颜色，以及可选的`inset`关键字（表示内部阴影）。
+   - 浏览器支持：类似`border-radius`，`box-shadow`也需要浏览器前缀以获得更广泛的支持。
+   - 示例代码：展示了如何为一个`div`元素添加外部阴影效果。
+
+**5-2 CSS3(II)文字与文本**
+1. **text-shadow属性**：
+   - 定义：`text-shadow`属性用于设置文本阴影效果。
+   - 参数：包括水平偏移、垂直偏移、阴影大小和颜色。
+   - 示例：展示了如何通过`text-shadow`属性为`h1`标签的文本添加阴影效果。
+
+2. **word-wrap属性**：
+   - 定义：`word-wrap`属性用于指定长单词或URL地址是否应该在边界处断行。
+   - 取值：`normal`（默认值，仅在允许断字点断行）和`break-word`（允许在长单词内断行）。
+   - 示例：展示了如何通过`word-wrap`属性避免长单词溢出容器边界。
+
+3. **@font-face规则**：
+   - 定义：`@font-face`规则允许在网页中嵌入自定义字体。
+   - 使用方法：通过定义字体的名称、来源等属性，并在CSS中引用该字体名称。
+   - 字体文件格式：包括`.ttf`、`.otf`、`.eot`、`.svg`、`.woff`等，以确保在不同浏览器中均能正常显示。
+   - 示例：介绍了如何使用`@font-face`规则嵌入自定义字体。
+
+**5-3 CSS3(III)2D变换**
+1. **transform属性**：
+   - 定义：`transform`属性用于对元素进行2D或3D转换，如旋转、缩放、移动等。
+   - 子函数：包括`rotate()`（旋转）、`scale()`（缩放）等。
+   - 浏览器支持：与`border-radius`和`box-shadow`类似，`transform`属性也需要浏览器前缀以获得更广泛的支持。
+
+2. **旋转rotate()**：
+   - 定义：`rotate()`函数用于对元素进行旋转操作。
+   - 参数：旋转角度（以度为单位），正值为顺时针旋转，负值为逆时针旋转。
+   - 示例：展示了如何对一个`div`元素进行30度的顺时针旋转。
+
+3. **缩放scale()**：
+   - 定义：`scale()`函数用于对元素进行缩放操作。
+   - 参数：水平方向和垂直方向的缩放比例（可选，默认为相同值）。
+   - 示例：展示了如何通过`:hover`伪类对一个元素进行放大效果。
+
+**5-4 CSS3(IV) 过渡与动画**
+1. **过渡transition**：
+   - 定义：`transition`属性用于在元素的一个或多个属性发生变化时，为这些变化提供平滑的过渡效果。
+   - 子属性：包括`transition-property`（过渡属性）、`transition-duration`（过渡持续时间）、`transition-timing-function`（过渡时间函数）、`transition-delay`（过渡延迟时间）。
+   - 示例：展示了如何通过`transition`属性为`div`元素的背景色和文本色添加过渡效果。
+
+2. **动画@keyframes**：
+   - 定义：`@keyframes`规则用于创建动画。通过定义关键帧和动画参数，可以控制元素在不同时间点的样式变化。
+   - 参数：包括`animation-name`（动画名称）、`animation-duration`（动画持续时间）、`animation-timing-function`（动画时间函数）、`animation-play-state`（动画播放状态）等。
+   - 示例：展示了如何通过`@keyframes`规则和`animation`属性
+   
+   
+**2.1 HTML概述**
+1. **HTML基本概念**：
+   - 定义：HTML（HyperText MarkUp Language）是制作网页的标准语言，不区分大小写。
+   - 标签与元素：HTML由标签、元素和属性组成，标签用来标记文本的开始和结束，元素包含开始标签、结束标签和它们之间的内容。
+   - 属性：用于提供标签的额外信息，如`<img src="logo.jpg" alt="站标" />`中的`src`和`alt`。
+
+2. **文件结构**：
+   - 基础结构：每个HTML文档以`<!DOCTYPE html>`声明开始，随后是`<html>`元素，内部包含`<head>`和`<body>`两部分。
+   - `<head>`部分：包含文档的元数据，如字符集定义、文档标题等。
+   - `<body>`部分：包含网页的可见内容。
+
+3. **DOM树**：
+   - 概念：DOM（Document Object Model）是文档的对象模型，它以树形结构表示文档。
+   - 元素关系：在DOM树中，元素有父子、兄弟等关系，便于管理和操作。
+
+**2.2 HTML文件结构**
+1. **文件结构与编码**：
+   - 组成部分：HTML文件包括头部(`<head>`)和主体(`<body>`)两部分。
+   - 字符集与编码：为了避免乱码，HTML文件需要指定字符集编码，通常使用UTF-8。
+
+2. **HTML5新特性**：
+   - `<!DOCTYPE html>`：用于声明文档类型，是HTML5的标准声明。
+   - `lang`属性：在`<html>`标签中使用，指定页面内容的语言，有助于搜索引擎优化。
+
+3. **HTML编辑器**：
+   - 推荐工具：可以使用记事本、Sublime Text3（含Emmet插件）、WebStorm等编辑器编写HTML文件。
+
+**2.3 HTML标签1**
+1. **文本格式标签**：
+   - 标题标签：`<h1>`到`<h6>`，用于定义标题，`<h1>`是最重要的标题。
+   - 段落标签：`<p>`，用于定义段落。
+   - 换行标签：`<br />`，用于段内换行。
+
+2. **其他文本标签**：
+   - 空格字符：`&nbsp;`用于在HTML中插入空格。
+   - 预留格式标签：`<pre>`，用于显示预格式化的文本，保留空格和换行符。
+   - 行内组合标签：`<span>`，用于组合行内元素以便进行CSS样式格式化。
+
+3. **水平线标签**：
+   - `<hr />`：用于在文档中插入水平线。
+
+**2.4 HTML标签2 a**
+1. **超链接标签**：
+   - `<a>`标签：用于定义超链接，可以链接到本站点其他网页、其他站点或进行虚拟链接（如`#`）。
+   - 链接类型：文字超链接、图片超链接等。
+
+2. **实际应用**：
+   - 站内链接：如`<a href="news.html">新闻</a>`。
+   - 站外链接：如`<a href="http://www.baidu.com">百度</a>`。
+   - 虚拟链接：如`<a href="#">版块2</a>`，常用于JavaScript动态跳转。
+
+**2.5 HTML标签3 img**
+1. **图像格式**：
+   - 常见格式：JPG（有损压缩，色彩丰富）、GIF（简单动画、背景透明）、PNG（无损压缩、透明、交错、动画）。
+
+2. **插入图像**：
+   - `<img>`标签：用于在HTML文档中插入图像，通过`src`属性指定图像路径。
+   - 路径类型：绝对路径和相对路径，根据图像文件和HTML文件的位置关系来确定。
+
+**2.6 HTML标签4 div ul table**
+1. **区域划分**：
+   - `<div>`标签：用于定义文档中的一个区域或区块，常通过CSS进行样式控制。
+
+2. **列表标签**：
+   - 无序列表：`<ul>`标签和`<li>`标签配合使用，表示无需顺序排列的列表项。
+   - 有序列表：`<ol>`标签和`<li>`标签配合使用，表示需要顺序排列的列表项。
+
+3. **表格标签**：
+
+   - `<tr>`标签：定义表格的行。
+   - `<td>`标签：定义表格的单元格，用于存储数据。
+   - `<th>`标签：定义表格的表头单元格，默认加粗并居中显示。
+**2.7 HTML标签5 form**
+
+1. **表单与表单元素**：
+   - 表单（`<form>`）：用于采集用户输入的信息，如文本框、密码框、单选按钮、复选框、下拉列表等。
+   - 表单元素：包括`<input>`, `<select>`, `<textarea>`等，用于接收用户输入。
+
+2. **输入类型**：
+   - `<input type="text">`：文本框，用于输入单行文本。
+   - `<input type="password">`：密码框，用于输入密码，输入内容会被隐藏。
+   - `<input type="submit">`：提交按钮，用于提交表单数据。
+   - `<input type="reset">`：重置按钮，用于重置表单中的所有字段为初始值。
+   - `<input type="radio">`：单选按钮，用于从多个选项中选择一个。
+   - `<input type="checkbox">`：复选框，用于从多个选项中选择多个。
+
+3. **下拉列表**：
+   - `<select>`标签与`<option>`标签配合使用，创建下拉列表。用户可以从下拉列表中选择一个选项。
+
+4. **文本域**：
+   - `<textarea>`标签用于创建多行文本输入区域，用户可以输入任意长度的文本。
+
+**2.8 Web语义化**
+
+1. **概述**：
+   - Web语义化是指通过HTML标签的语义化，使网页内容具有良好的结构和含义，便于人和机器理解。
+
+2. **语义化标签**：
+   - `<em>`和`<strong>`：分别用于表示强调和重点强调，与`<i>`和`<b>`相比，它们具有语义化含义。
+   - `<dl>`, `<dt>`, `<dd>`：自定义列表标签，`<dl>`定义列表，`<dt>`定义列表项，`<dd>`定义描述。这种列表结构有助于表示术语及其定义或说明。
+
+3. **优势**：
+   - 有利于搜索引擎优化（SEO），提高网页在搜索引擎中的排名。
+   - 有利于不同设备的兼容性和可访问性。
+   - 有利于团队的开发和维护，提高代码的可读性和可维护性。
+   
+   
+   **6-1 JavaScript概述与基础语法**：
+1. **JavaScript概述**：
+   - 编译型与解释型：JavaScript是一种解释型脚本语言，无需编译，直接在运行时由解释器执行。
+   - 运行环境：可独立安装JS解释器（如NodeJS），或嵌入在浏览器内核中。
+   - 应用场景：适用于PC、手机、平板、机顶盒等多种设备。
+
+2. **JavaScript组成**：
+   - ECMAScript：JavaScript的核心语法。
+   - DOM（文档对象模型）：提供操作网页内容和结构的API。
+   - BOM（浏览器对象模型）：提供操作浏览器窗口的API。
+
+3. **JavaScript特点**：
+   - 开发工具简单，记事本即可编写。
+   - 无需编译，直接执行。
+   - 弱类型语言，变量类型由数据决定。
+   - 面向对象编程支持。
+
+4. **浏览器内核与JS执行**：
+   - 浏览器内核负责页面渲染和脚本解释。
+   - JS代码通过`<script>`标签嵌入HTML页面执行。
+
+**6-2 变量**：
+1. **变量定义**：
+   - 变量是内存中的一段存储空间，用于存储数据。
+   - 变量名自定义，值是存储在变量中的数据。
+
+2. **变量声明**：
+   - 使用`var`关键字声明变量，并可选地初始化值。
+   - 声明时尽量使用`var`以避免创建全局变量。
+
+3. **变量命名规范**：
+   - 不能使用JavaScript关键字和保留字。
+   - 由字母、数字、下划线及`$`组成，不能以数字开头。
+   - 推荐见名知意，可采用驼峰命名法。
+
+4. **变量使用**：
+   - 声明后未赋值的变量为`undefined`。
+   - 未经声明的变量直接使用会导致错误。
+   - 支持GET和SET操作，即获取和设置变量的值。
+
+**6-3 数据类型**：
+1. **数据类型分类**：
+   - 原始类型（基本类型）：数字、字符串、布尔、空（null）、未定义（undefined）。
+   - 引用类型：对象、数组等复杂数据结构。
+
+2. **数字类型**：
+   - 可表示整数和浮点数，支持十进制、八进制、十六进制表示。
+
+3. **字符串类型**：
+   - 表示文本数据，由Unicode字符组成，支持转义字符。
+
+4. **布尔类型**：
+   - 仅有两个值：`true`和`false`，用于逻辑判断。
+
+5. **类型转换**：
+   - 隐式转换：JS自动根据上下文进行类型转换。
+   - 显示转换：使用函数如`toString()`、`parseInt()`、`parseFloat()`、`Number()`强制转换数据类型。
+
+**6-4 运算符&表达式**：
+1. **运算符**：
+   - 算术运算符：`+`、`-`、`*`、`/`、`%`等，用于数学计算。
+   - 关系运算符：`>`、`<`、`==`、`!=`等，用于比较操作。
+   - 逻辑运算符：`&&`、`||`、`!`，用于逻辑判断。
+   - 自增自减运算符：`++`、`--`，用于改变变量值。
+
+2. **表达式**：
+   - 由运算符和操作数组成，有具体的值。
+   - 支持嵌套和复杂计算。
+
+3. **条件运算符**（三目运算符）：
+   - 语法：`表达式1 ? 表达式2 : 表达式3`，根据条件选择执行结果。
+
+**6-5 函数**：
+1. **函数定义**：
+   - 是一段预定义好的代码块，可重复执行，用于完成特定任务。
+   - 语法：`function 函数名() { 可执行语句; }`。
+
+2. **函数调用**：
+   - 通过函数名加括号调用，可选地传递参数。
+
+3. **参数与返回值**：
+   - 定义函数时可指定参数列表，函数体内可通过参数访问传递的数据。
+   - 使用`return`语句返回结果给调用者。
+
+4. **变量作用域**：
+   - 全局作用域：变量在整个脚本中有效。
+   - 函数作用域：变量仅在函数内部有效。
+
+**6-6 分支结构**：
+1. **分支结构基础**：
+   - 根据条件选择执行不同代码块，包括`if-else`和`switch-case`结构。
+
+2. **if-else结构**：
+   - 当条件满足时执行特定代码块，否则执行另一代码块（可选）。
+
+3. **switch-case结构**：
+   - 根据表达式的值匹配不同的`case`分支执行，可通过`break`跳出。
+
+**6-7 循环结构**：
+1. **循环类型**：
+   - `while`循环：当条件为真时重复执行代码块。
+   - `do-while`循环：至少执行一次代码块，再检查条件。
+   - `for`循环：初始化、条件判断、迭代操作于一体的循环结构。
+
+2. **循环控制**：
+   - `continue`：跳过当前循环迭代，继续下一次迭代。
+   - `break`：退出当前循环。
+
+3. **循环嵌套**：
+   - 循环体内可包含另一个循环，解决复杂问题。
+
+**6-8 数组**：
+1. **索引数组**：
+   - 使用数字下标访问元素，支持动态增长。
+   - 可以通过数组直接量或`new Array()`创建。
+
+2. **关联数组**：
+   - 使用自定义字符串下标访问元素，类似对象。
+   - 不支持通过`length`属性获取元素数量，需通过`for-in`循环遍历。
+
+**6-9 数组API**：
+1. **数组操作**：
+   - `join()`：将数组元素连接成字符串。
+   - `concat()`：拼接数组。
+   - `slice()`：选取数组的一部分。
+   - `splice()`：删除、插入、替换数组元素。
+
+2. **数组排序与反转**：
+   - `sort()`：对数组进行排序（可自定义排序函数）。
+   - `reverse()`：反转数组元素顺序。
+
+**6-10 DOM查找**：
+1. **DOM基础**：
+   - DOM是文档对象模型，允许程序动态访问和更新文档内容。
+
+2. **查找元素**：
+   - `getElementById()`：按ID查找元素。
+   - `getElementsByTagName()`：按标签名查找元素集合。
+   - `getElementsByClassName()`：按类名查找元素集合。
+   - `querySelector()`和`querySelectorAll()`：按CSS选择器查找元素。
+
+**6-11 DOM修改**：
+1. **修改属性**：
+   - 使用`getAttribute()`和`setAttribute()`读取和设置元素属性。
+   - `hasAttribute()`检查元素是否包含指定属性。
+   - `removeAttribute()`移除元素属性。
+
+2. **修改样式**：
+   - 直接通过`elem.style.属性名`修改内联样式，属性名需转为驼峰命名。
+
+**6-12 DOM添加**：
+1. **添加元素步骤**：
+   - 创建空元素。
+   - 设置关键属性和样式。
+   - 将元素添加到DOM树中，可使用`appendChild()`或`insertBefore()`。
+
+2. **优化添加操作**：
+   - 减少直接操作DOM树，使用文档片段临时保存多个子元素。
+
+**6-13 BOM**：
+1. **BOM基础**：
+   - BOM是浏览器对象模型，提供与浏览器窗口交互的API。
+
+2. **窗口对象**：
+   - `window`：代表浏览器窗口。
+   - `history`、`navigator`、`document`、`location`、`screen`等子对象提供特定功能。
+
+3. **定时器**：
+   - `setInterval()`：周期性执行代码。
+   - `setTimeout()`：延迟一段时间执行代码。
+   - 可通过返回值停止定时器。
+   
+   
+   1. **JQuery概述与工厂函数**：
+   - **JQuery定义**：JQuery是一个快速、简洁的第三方JavaScript库，核心理念是“write less，do more”，旨在通过更少的代码实现更多的功能。
+   - **JQuery优势**：它极大地简化了DOM操作，包括事件处理、动画效果、Ajax等，并解决了浏览器的兼容性问题。
+   - **使用方式**：使用JQuery需要先通过下载到服务器或使用CDN网络引入JQuery.js文件，然后编写自定义脚本。
+   - **工厂函数$()**：JQuery中的所有操作都从一个美元符号$和一个圆括号开始，该函数能够使用各种选择符来选取元素，包括CSS选择符。
+
+2. **JQuery增删改查操作**：
+   - **选择器**：JQuery提供了基本选择器、层级选择器和兄弟关系选择器，用于精确地选取DOM元素。
+   - **修改操作**：包括属性修改（如attr方法用于获取和设置元素属性）、内容修改（html和text方法用于读写元素的HTML和文本内容）、值操作（val方法用于获取和设置表单元素的value值）。
+   - **样式操作**：通过css方法直接修改元素的CSS属性，或通过addClass、removeClass、hasClass等方法批量修改样式。
+   - **增删操作**：通过append、remove等方法可以添加和删除DOM元素，实现对DOM树的动态修改。
+
+3. **JQuery事件**：
+   - **事件绑定**：JQuery提供了bind方法用于绑定事件处理器，也可以使用简写形式如click方法。
+   - **事件对象**：事件对象包含了与事件相关的信息，如鼠标位置、键盘按键状态等，并提供了影响事件传递进程的方法。
+   - **事件处理**：通过事件对象可以获取和设置事件相关的详细信息，实现复杂的事件处理逻辑。
+
+4. **响应式布局与媒体查询**：
+   - **响应式布局**：根据不同设备的屏幕尺寸和分辨率，动态调整网页布局，提升用户体验。
+   - **媒体查询**：CSS3的Media Query允许根据不同的媒体类型和条件应用不同的样式规则，是实现响应式布局的关键技术。
+   - **Viewport视口**：定义了网页的可见区域，通过<meta>标签的viewport属性可以控制视口的尺寸和缩放比例。
+   - **布局方式**：包括固定宽度布局、流式布局、栅格化布局和响应式布局等多种方式，可以混合使用以满足不同需求。
+
+5. **响应式布局(Bootstrap)**：
+   - **Bootstrap概述**：Bootstrap是一个来自Twitter的开源、移动优先的前端框架，基于HTML、CSS、JavaScript和JQuery，通过少量的代码实现多终端的页面适配。
+   - **使用方式**：通过引入Bootstrap的CSS和JavaScript文件，可以方便地使用其提供的栅格系统、组件和插件。
+   - **栅格系统**：Bootstrap的栅格系统通过.container、.row和.col-*等类来构建响应式布局，支持多种屏幕尺寸下的自动布局调整。
+
+6. **HTML5**：
+   - **新结构元素**：HTML5引入了<header>、<nav>、<footer>、<section>、<article>、<aside>等新标签，用于更清晰地定义网页的结构。
+   - **多媒体支持**：HTML5支持<audio>和<video>标签，用于在网页中嵌入音频和视频文件，并提供了丰富的控制选项。
+   - **Canvas绘图**：Canvas API允许在网页上通过JavaScript绘制图形和图像，实现丰富的视觉效果和交互体验。
+   - **功能增强**：HTML5还提供了表单验证、地理位置API、本地存储等新功能，增强了网页的功能性和用户体验。
+   
+   
+   
+   
+   
+   
+   
+   ### Summary: Getting Started with JavaScript
+
+#### Introduction to JavaScript Coding
+- **Objective:** Learn how to start writing and executing JavaScript code using two methods: directly in the web browser's console and through a text editor.
+
+#### Method 1: Using the JavaScript Console
+- **Quick Setup:** The JavaScript console in web browsers like Google Chrome allows you to quickly test and run JavaScript code.
+- **Accessing the Console:**
+  1. Open Chrome and type `about:blank` in the address bar to get a blank page.
+  2. Press `CTRL-SHIFT-J` (Windows/Linux) or `OPTION-COMMAND-J` (macOS) to open the console.
+  3. The console will appear, allowing you to type and run JavaScript code.
+
+- **First Code Example:**
+  - **Code:** `alert("Hello, world!");`
+  - **Result:** A dialog box appears with the message "Hello, world!".
+  - **Concept:** This example demonstrates using the `alert` function, which is a simple way to display a message in a dialog box.
+
+#### Method 2: Using a Text Editor
+- **Text Editor Setup:** As you progress, using a text editor like Visual Studio Code (VS Code) becomes more practical for writing larger JavaScript projects.
+- **Steps to Write JavaScript in a Text Editor:**
+  1. Install and open VS Code.
+  2. Create a new file named `hello.html` in a designated directory, e.g., `javascript_work`.
+  3. Enter the following code in the file:
+
+    ```html
+    <html>
+    <body>
+    <script>
+      alert("Hello from hello.html!");
+    </script>
+    </body>
+    </html>
+    ```
+
+- **Running the HTML File in a Browser:**
+  1. Open Chrome and press `CTRL-O` (Windows/Linux) or `COMMAND-O` (macOS) to open the file.
+  2. Locate and open the `hello.html` file.
+  3. A dialog box will appear with the message "Hello from hello.html!".
+
+- **Concepts Covered:**
+  - **HTML & JavaScript Integration:** JavaScript can be embedded within HTML files using `<script>` tags. This allows the JavaScript code to be executed when the HTML file is loaded in a web browser.
+  - **Function Execution:** The JavaScript code between the `<script>` tags in the HTML file executes the `alert` function, similar to what was done in the console.
+
+#### Summary
+- **Two Methods of Writing and Executing JavaScript:**
+  1. **JavaScript Console:** Ideal for quickly testing small code snippets.
+  2. **Text Editor (VS Code):** Suitable for developing more complex projects by embedding JavaScript within HTML files.
+- **Purpose:** These methods prepare you for future chapters where you'll explore JavaScript basics and build more advanced projects.
+
+This summary provides a comprehensive overview of how to get started with JavaScript, using both quick tests in the browser's console and more structured coding in a text editor.
+   
+   
+   
+   
+   
+   
+   
+   
+   Comprehensive Summary
+This chapter introduces the fundamentals of JavaScript programming by covering basic building blocks, data types, expressions, statements, and variable and constant declarations.
+Basic Units
+
+Expressions: Fragments of code that represent a single value. Evaluating an expression gives a result. Examples include 100 + 200 (evaluates to 300).
+Statements: Complete thoughts that instruct the computer to do something. Statements end with a semicolon in JavaScript.
+
+Expressions and Statements
+
+Expressions: Have values but don't do anything by themselves. Adding a semicolon to an expression turns it into a statement.
+Statements: Perform tasks but don't have values. Statements use expressions to achieve their goals.
+
+Numbers and Operators
+
+Number Data Type: Used to store numeric values. Supports operations like addition (+), subtraction (-), multiplication (*), and division (/).
+Order of Operations: Follows the PEMDAS rule (Parentheses, Exponents, Multiplication, Division, Addition, Subtraction).
+Floating-Point Numbers: Represent fractional numbers but have limited precision.
+
+Variables and Constants
+
+Variables: Names associated with values that can change. Declared using let (preferred) or var (legacy).
+Initialization: Giving a variable a value for the first time.
+Assignment: Changing a variable's value using the = operator.
+Constants: Names associated with values that never change. Declared using const.
+
+Naming Conventions
+
+Descriptive Names: Use meaningful names for variables and constants to improve readability.
+CamelCase: A common convention for variable names (e.g., speedInMPH).
+Snake_Case: An alternative convention, especially for constants (e.g., HOURS_IN_A_DAY).
+
+Incrementing and Decrementing
+
+Increment Operator (++): Adds 1 to a variable's value. Can be prefix (++variable) or postfix (variable++).
+Decrement Operator (--): Subtracts 1 from a variable's value. Similar prefix/postfix behavior.
+
+Addition, Subtraction, Multiplication, and Division Assignment
+
++=: Increments a variable's value by a specified amount (e.g., price += 5).
+-=: Decrements a variable's value by a specified amount.
+***=**: Multiplies a variable's value by a specified number.
+/=: Divides a variable's value by a specified number.
+
+This chapter lays the foundation for more advanced JavaScript programming by introducing fundamental concepts like expressions, statements, variables, and constants, along with various mathematical operations and assignment techniques. Understanding these basics is crucial for writing effective and efficient JavaScript code.

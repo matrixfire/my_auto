@@ -1,0 +1,156 @@
+机器学习： 机器学习中所谓的学习，就是为了通过给定的输入得到和目标尽可能接近的输出，使用训练数据对参数进行调整的过程。
+
+使用训练数据对参数进行过调整的模型称为训练好的模型。对于训练好的模型，需要用测试数据对其进行测试，从而评价训练的效果。
+
+
+机器学习主要用于解决以下类型的问题：
+1，以大量数据为基础，预测结果（预测）： 我们面对预测问题，首先要有好的模型加上大量的训练数据。然后，我们需要的是“能根据输入向量，得到和目标向量尽量接近的输出向量”这样一个
+训练好的模型。
+2，对大量数据进行识别和分类（分类）： 是指对于给定的输入，判断其应该被分入哪个类别这种问题。
+例如build a classification system using the k-nearest neighbors(KNN) algorithm.
+
+都是围绕：大量数据
+
+预测或分类的具体方法并不是由程序员事先设定的，而是由计算机从大量数据中自动提取特征，从而解决问题。
+
+人工智能这个词的含义比较广泛，机器学习是实现人工智能的一种基本技术手段，而深度学习是机器学习技术的一种。
+
+
+Why ML grow:
+1, 输入资源
+2, 信息处理能力
+3, 输出结果
+
+感知器(perceptron):
+Certainly! A perceptron is a basic unit in artificial neural networks that's inspired by how a single neuron in our brains works. It's used for binary classification, which means it decides whether an input belongs to one group or another.
+
+Here's a simple explanation:
+
+1. **Input**: Just like our senses (like eyes or ears) send signals to our brain, a perceptron takes inputs, which could be anything from numbers to colors.
+
+2. **Weights**: Each input is given a weight, which determines how important it is. For example, if we're trying to predict if it's going to rain based on the temperature and humidity, we might give more weight to humidity because it's more closely related to rain.
+
+3. **Summing**: The perceptron multiplies each input by its weight and adds them up. This is like adding up all the factors that might influence a decision.
+
+4. **Activation**: Once it has the sum, it applies a function to it. If the sum is above a certain threshold, it "fires" (like a neuron sending a signal in our brain) and decides it's in one group. If it's below the threshold, it decides it's in the other group.
+
+5. **Learning**: If the perceptron makes a mistake, it adjusts the weights to do better next time. This is how it learns from experience, much like how we learn from our mistakes.
+
+In essence, a perceptron is a simple model that tries to make decisions by weighing different factors, much like how our brains might decide whether to bring an umbrella based on the weather forecast.
+
+
+
+
+。
+
+
+机器学习中的学习就是通过调整参数(选取尽量好的参数)，得到与目标尽可能接近的 输出的过程。
+
+·首先准备好训练数据(包括输入和目标) ·把输入代入模型，得到相应的输出 ·对输出和目标进行比较 ·调整参数，得到更好的输出(使得输出与目标尽可能接近)
+
+我们需要的是解决一般性问题的能力，这称为泛化能力。
+
+这种想法本质上和学生在学校的学习类似。对于在学校的学习来说，能解出课堂上出 的练习题并不是目的。学生能够通过学习掌握知识和能力，从而解出和练习题难度相当的 (一般性的)问题才是目的所在。为此，学校会通过考试，用课堂上没有讲过的题目对学习
+效果进行测试。也就是说，学校会对学生的泛化能力进行测试。
+
+数据可分为训练数据和测试数据；过拟合(overfitting)
+损失函数
+
+梯度下降法
+学习率
+
+神经网络（neural network）
+
+误差反向传播法
+（error back-propagation）
+
+
+深度学习，强化学习
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+支持向量机
+
+
+
+
+
+
+
+
+
+
+
+
+一些术语：
+为预测问题建立模型 （模型：...感知器，神经网络）
+模型中的参数
+训练数据
+feature extraction
+regression： predicting a number, like the value of a stock tomorrow or how much a user will enjoy a movie
+
+
+Classifying oranges vs. grapefruit(bigger and redder)
+
+These are the two basic things you’ll do with KNN—classification and regression:
+
+Classification = categorization into a group
+
+Regression = predicting a response (like a number)
+
+
+Cosine similarity： Cosine similarity doesn’t measure the distance between two vectors. Instead, it compares the angles of the two vectors.
+
+
+Picking the right features means
+
+Features that directly correlate to the movies you’re trying to recommend
+
+Features that don’t have a bias (for example, if you ask the users to only rate comedy movies, that doesn’t tell you whether they like action movies)
+
+
+
+
+
+
+
+
+
+Introduction to machine learning
+applications:
+1, building a recommendations system.
+2, OCR, speech recognition or face recognition
+4, spam filters
+
+gather data-clean data-extract features
+
+
+
+
+
+Yes, training is a crucial step in the machine learning process, but there are several other important steps involved as well. Here's a general overview of the typical machine learning process:
+
+1. **Data Collection**: Gather a dataset that contains examples of the problem you want to solve. For OCR, this would be images containing numbers, and for spam filters, this would be emails labeled as spam or not spam.
+2. **Data Preprocessing**: Clean and preprocess the data to ensure it's in a suitable format for training. This may involve tasks like removing noise from images, converting text to lowercase, and tokenizing text data.
+3. **Feature Extraction**: Extract relevant features from the data. This step is crucial because it transforms the data into a format that the machine learning algorithm can work with. For OCR, this might involve extracting features like the shape and orientation of numbers in images. For spam filters, this could involve extracting features like the frequency of certain words in emails.
+4. **Model Selection**: Choose a machine learning model to use for the task. This could be a decision tree, a neural network, or any other model that is suitable for the problem at hand.
+5. **Training**: Train the chosen model on the training data. During training, the model learns the patterns and relationships in the data that will enable it to make predictions or classifications.
+6. **Evaluation**: Evaluate the trained model on a separate dataset called the validation or test dataset. This step helps assess how well the model generalizes to new, unseen data.
+7. **Hyperparameter Tuning**: Fine-tune the model's hyperparameters to improve its performance. Hyperparameters are settings that control the learning process of the model, such as the learning rate in neural networks.
+8. **Deployment**: Once the model is trained and evaluated satisfactorily, deploy it to make predictions or classifications on new data.

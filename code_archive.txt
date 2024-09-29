@@ -1,0 +1,147 @@
+Artists Rating in website:     
+
+
+	 <!-- Artists Rating-->
+      <section class="section-66 section-md-110 bg-lighter novi-background" data-preset='{"title":"Artists block","category":"content","reload":false,"id":"artists-block"}'>
+        <div class="container">
+          <h1 class="text-between">Artists Rating</h1>
+          <div class="row justify-content-sm-center">
+            <div class="col-lg-10 col-xl-12">
+              <div class="row text-md-left">
+                <div class="col-sm-6 col-xl-4">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-tiffany-harper-120x120.jpg' %}" width="120" height="120" alt="Tiffany Harper"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Tiffany Harper</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">1806.98</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-4 offset-top-41 offset-sm-top-0">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-marie-myers-120x120.jpg' %}" width="120" height="120" alt="Marie Myers"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Marie Myers</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">1687.54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-4 offset-top-41 offset-xl-top-0">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-hannah-sandoval-120x120.jpg' %}" width="120" height="120" alt="Hannah Sandoval"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Hannah Sandoval</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">1387.54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Next Range-->
+                <div class="row-spacer d-none d-xl-block offset-top-50"></div>
+                <div class="col-sm-6 col-xl-4 offset-top-41 offset-xl-top-0">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-amy-perry-120x120.jpg' %}" width="120" height="120" alt="Amy Perry"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Amy Perry</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">1106.98</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-4 offset-top-41 offset-xl-top-0">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-gloria-warren-120x120.jpg' %}" width="120" height="120" alt="Gloria Warren"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Gloria Warren</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">987.54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-4 offset-top-41 offset-xl-top-0">
+                  <div class="unit unit-sm flex-md-row unit-spacing-sm">
+                    <div class="unit-left"><img src="{% static 'core/images/user-sarah-graham-120x120.jpg' %}" width="120" height="120" alt="Sarah Graham"></div>
+                    <div class="unit-body">
+                      <div>
+                        <h5 class="text-primary"><a href="#">Sarah Graham</a></h5>
+                      </div>
+                      <div class="offset-top-10">
+                        <div class="text-dark offset-top-0">Scrapbooking, polymer clay</div>
+                      </div>
+                      <div class="offset-top-14">
+                        <div class="icon icon-xxs mdi novi-icon mdi-trending-up text-dark text-middle"></div><span class="text-darkest text-middle inset-left-10">887.54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-sm-center offset-top-66">
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-4 inset-left-50 inset-sm-left-80 inset-right-50 inset-sm-right-80"><a class="btn btn-block btn-default btn-ellipse" href="#">view all members</a></div>
+          </div>
+        </div>
+      </section>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+      <!-- Upcoming Products-->
+
+                <div class="row justify-content-sm-center">
+                  {% for news in diy_news_list %}
+                  <div class="col-md-6 col-lg-5 col-xl-3">
+                    <!-- Post Event-->
+                    <article class="post post-event-type-2">
+                      <!-- Post media-->
+                      <header class="post-media novi-excluded">
+                        <a href="{{ news.get_absolute_url }}">
+                          <img src="{{ news.cover_image.url }}" width="270" height="310" alt="{{ news.title }}">
+                          <span class="icon fa fa-info-circle novi-icon"></span>
+                        </a>
+                      </header>
+                      <!-- Post content-->
+                      <section class="post-content text-left novi-excluded offset-top-10">
+                        <!-- Post Body-->
+                        <div class="post-body">
+                          <!-- Post Title-->
+                          <h5 class="offset-top-10"><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h5>
+                        </div>
+                      </section>
+                    </article>
+                  </div>
+                  {% endfor %}
+                </div>

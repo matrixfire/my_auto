@@ -1,0 +1,248 @@
+Adobe Illustrator是一款专业的矢量图形编辑软件，主要用于创建、编辑和设计各种图形、图标、插图和其他矢量图形。以下是关于Adobe Illustrator最重要的20%的信息，以帮助你更好地理解该软件：
+
+1. **矢量图形：** Illustrator主要处理矢量图形，这意味着图形由数学公式定义，可缩放而不失真。
+
+2. **画布和画板：** 画布是你工作的整个区域，而画板是画布上的可见区域。
+
+3. **工具面板：** Illustrator提供了各种工具，如选择工具、画笔工具、形状工具等，用于创建和编辑图形。
+
+4. **图层：** 图层允许你组织和管理图形元素，使其易于编辑和调整。
+
+5. **路径：** Illustrator中的图形主要通过路径定义，路径可以是直线、曲线等。
+
+6. **填充和描边：** 你可以为图形添加颜色填充和描边，控制其外观。
+
+7. **颜色面板：** 用于选择和调整颜色，包括填充和描边的颜色。
+
+8. **文本工具：** 允许你添加和编辑文本，包括各种字体和样式选项。
+
+9. **效果：** Illustrator提供各种效果，如阴影、模糊等，可改变图形的外观。
+
+10. **路径调整和转换：** 可以通过编辑路径节点、调整曲线等方式精细控制图形形状。
+
+11. **对齐和分布：** 帮助你精确排列和对齐图形元素。
+
+12. **画笔工具：** 允许你绘制自由形状，也可以用于描边路径。
+
+13. **形状工具：** 提供了各种基本形状，如矩形、椭圆等，方便创建基本图形。
+
+14. **图像导入：** 允许你导入和处理位图图像，如JPEG、PNG等。
+
+15. **保存和导出：** 可以保存你的工作为Illustrator文件，也可以导出为不同格式的图像文件。
+
+16. **路径蒙版：** 通过蒙版，你可以控制图形的可见性，实现一些有趣的效果。
+
+17. **观看面板：** 提供了关于文件信息和图形属性的总览。
+
+18. **快捷键：** 学习一些基本的快捷键可以提高工作效率。
+
+19. **颜色模式：** 可以选择不同的颜色模式，如RGB和CMYK，以适应不同输出需求。
+
+20. **路径组合：** 了解路径的组合、合并、分割等操作，以更灵活地处理图形。
+
+这些是Adobe Illustrator的基本概念和工具，掌握它们将帮助你开始在Illustrator中进行矢量图形设计和编辑。通过实践和不断尝试，你将更深入地了解软件的高级功能和技巧。
+
+
+
+当涉及到Adobe Photoshop时，了解其最重要的20%可以帮助您建立一个强大的基础，以便更有效地使用该软件。以下是您可能会发现最重要的一些方面：
+
+1. **界面：** 熟悉主界面，了解工具栏、面板和菜单的基本布局。
+
+2. **工具：** 了解一些基本工具，如选择工具、画笔工具、橡皮擦工具和文本工具。
+
+3. **图层：** 学习如何使用图层，包括创建、重命名、组织和合并图层。
+
+4. **调整图像大小和分辨率：** 了解如何调整图像的尺寸和分辨率，以适应不同的需求。
+
+5. **色彩模式：** 理解RGB和CMYK色彩模式，以及它们在不同项目中的用途。
+
+6. **色彩校正：** 学习基本的色彩校正技术，包括亮度、对比度和颜色平衡的调整。
+
+7. **选择和遮罩：** 理解如何使用选择工具和遮罩来精确选择和编辑图像的特定部分。
+
+8. **图像调整：** 掌握曲线、色阶和色相/饱和度等调整图像的工具。
+
+9. **滤镜：** 了解一些常见的滤镜，如模糊、锐化和艺术滤镜的基本应用。
+
+10. **文本处理：** 学习如何添加、编辑和格式化文本图层。
+
+11. **保存和输出：** 知道如何保存不同格式的文件，并了解输出图像的基本设置。
+
+12. **历史记录：** 使用历史面板来跟踪和撤销操作。
+
+13. **快捷键：** 掌握一些常用的快捷键，以提高工作效率。
+
+14. **图像修复：** 学习使用修复工具和克隆工具来修复图像中的缺陷。
+
+15. **图层样式：** 了解如何使用图层样式添加阴影、发光等效果。
+
+16. **动作和批处理：** 使用动作和批处理功能自动执行重复性任务。
+
+17. **蒙版：** 掌握图层蒙版的基本原理，以实现更灵活的编辑。
+
+18. **路径工具：** 学会使用路径工具创建和编辑路径，尤其是在制作矢量图形时。
+
+19. **工作空间定制：** 了解如何调整和保存您的工作空间，以适应个人偏好和工作流程。
+
+20. **创意工具：** 探索一些创意性的工具和技术，如渐变、图案和图层样式，以增强图像的吸引力。
+
+通过熟悉这些基本概念和技能，您将能够更自信地使用Adobe Photoshop进行图像编辑和设计。不断实践和探索新功能将有助于深化您的技能。
+
+
+
+Certainly! Adobe Illustrator is a powerful vector graphics editor used for creating illustrations, logos, icons, and various other design elements. To get you started efficiently, here's the 20% of key concepts that will likely cover 80% of your learning needs:
+
+1. **Vectors vs. Pixels:**
+   - Understand the fundamental difference between vector and raster (pixel-based) graphics.
+   - Illustrator works primarily with vectors, which are scalable without loss of quality.
+
+2. **Artboards:**
+   - Artboards are the canvas or work areas in Illustrator where you create your designs.
+   - Learn to manage and create multiple artboards for different elements or variations.
+
+3. **Basic Shapes and Paths:**
+   - Master the creation and manipulation of basic shapes like rectangles, circles, and polygons.
+   - Understand how to use the Pen tool to create and edit paths.
+
+4. **Selection and Direct Selection Tools:**
+   - Get familiar with the Selection tool (V) for selecting whole objects and the Direct Selection tool (A) for editing individual anchor points.
+
+5. **Fill and Stroke:**
+   - Comprehend the concept of fills (interior color) and strokes (outline).
+   - Learn to modify their properties, such as color, thickness, and style.
+
+6. **Layers:**
+   - Grasp the importance of organizing your artwork with layers.
+   - Learn how to create, lock, hide, and rearrange layers.
+
+7. **Transformations:**
+   - Understand how to scale, rotate, reflect, and shear objects.
+   - Use the Transform panel for precise adjustments.
+
+8. **Align and Distribute:**
+   - Learn the tools and options for aligning and distributing objects evenly.
+
+9. **Pathfinder Panel:**
+   - Master the Pathfinder panel for combining, dividing, and manipulating shapes.
+   - Explore options like Unite, Minus Front, and Intersect.
+
+10. **Color and Swatches:**
+    - Understand the color modes (RGB, CMYK) and how to apply colors to your artwork.
+    - Utilize the Swatches panel for managing and saving color swatches.
+
+11. **Typography:**
+    - Learn to add and format text using the Type tool (T).
+    - Understand text properties like font, size, kerning, and leading.
+
+12. **Effects and Styles:**
+    - Explore the Effects menu for applying various effects to objects.
+    - Save time with Graphic Styles for consistent formatting.
+
+13. **Clipping Masks:**
+    - Master the creation of clipping masks to control the visibility of objects within a defined shape.
+
+14. **Pathfinder Panel:**
+    - Use the Pathfinder panel for combining, dividing, and manipulating shapes.
+    - Explore options like Unite, Minus Front, and Intersect.
+
+15. **Symbols:**
+    - Understand the concept of symbols for reusing and editing common elements across your artwork.
+
+16. **Exporting and Saving:**
+    - Learn to save your work in different formats, such as AI, EPS, PDF, or SVG.
+    - Understand export settings for web and print.
+
+17. **Artboard Navigation:**
+    - Master zooming and panning using shortcuts and navigation tools for efficient work.
+
+18. **Pen Tool Techniques:**
+    - Practice creating complex shapes and paths using the Pen tool.
+    - Understand bezier handles and anchor points manipulation.
+
+19. **Pathfinder Panel:**
+    - Utilize the Pathfinder panel for combining, dividing, and manipulating shapes.
+    - Explore options like Unite, Minus Front, and Intersect.
+
+20. **Gradients and Transparency:**
+    - Learn to apply gradients to objects.
+    - Understand how to use transparency settings for a more dynamic design.
+
+By focusing on these key aspects, you'll build a solid foundation in Adobe Illustrator and be well-equipped to create a wide range of vector-based designs. Practice and experimentation will further enhance your skills over time.
+
+
+
+
+
+
+Certainly! Adobe Photoshop is a powerful image editing software with a wide range of features. To help you grasp the most important aspects efficiently, here are the key concepts that cover approximately 80% of what you need to know:
+
+1. **Interface Familiarization:**
+   - Toolbar: Learn the basic tools like Selection, Crop, Brush, and Text.
+   - Panels: Understand essential panels such as Layers, History, and Color.
+
+2. **File Types:**
+   - Know common file formats (JPEG, PNG, PSD) and when to use each.
+
+3. **Basic Tools:**
+   - Selection Tools: Master the Marquee, Lasso, and Magic Wand tools for making selections.
+   - Brush Tool: Understand brush properties, size, and hardness.
+   - Crop Tool: Crop and straighten images effectively.
+
+4. **Layers:**
+   - Grasp the concept of layers and their importance in non-destructive editing.
+   - Learn layer adjustments and blending modes.
+
+5. **Transformations:**
+   - Understand how to resize, rotate, and flip images or layers.
+
+6. **Masks:**
+   - Learn to use layer masks for selective editing and blending.
+
+7. **Filters:**
+   - Explore common filters like Blur, Sharpen, and Noise for quick adjustments.
+
+8. **Text:**
+   - Add and format text using the Text tool.
+
+9. **Color Adjustment:**
+   - Use tools like Hue/Saturation, Levels, and Curves for color correction.
+
+10. **Retouching:**
+    - Master the Clone Stamp and Healing Brush tools for retouching imperfections.
+
+11. **Saving and Exporting:**
+    - Save and export images in various formats.
+
+12. **Workspace Customization:**
+    - Customize your workspace for efficient workflow.
+
+13. **Shortcut Keys:**
+    - Learn essential shortcut keys to speed up your workflow.
+
+14. **Smart Objects:**
+    - Understand the benefits of using Smart Objects for non-destructive editing.
+
+15. **Brush Presets:**
+    - Explore and create custom brush presets for different effects.
+
+16. **Pen Tool:**
+    - Familiarize yourself with the Pen tool for precise selections and paths.
+
+17. **Adjustment Layers:**
+    - Utilize adjustment layers for flexible and reversible edits.
+
+18. **Gradient Tool:**
+    - Create smooth color transitions using the Gradient tool.
+
+19. **Histogram:**
+    - Understand the histogram for analyzing and adjusting image tones.
+
+20. **Workspace Optimization:**
+    - Optimize your workspace for efficiency based on your workflow.
+
+By focusing on these key aspects, you'll build a solid foundation in Adobe Photoshop and be able to perform a wide range of editing tasks. Practice and experimentation will further enhance your skills over time.
+
+
+
+
+I'm learn what are the 20% of key concepts that will likely cover 80% of my learning needs?

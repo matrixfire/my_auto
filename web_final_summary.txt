@@ -1,0 +1,67 @@
+**Web系统架构**：
+   - 角色分工：网站架构师、网页美工、前端开发人员等共同协作完成Web系统开发。
+   - 示例：提到电商网站、综合门户网站、管理系统等不同类型的Web系统。
+   
+#### 为什么要学习 JavaScript？
+- **浏览器集成**：JavaScript 几乎可以在所有 Web 浏览器中运行，无需特殊安装。这种可访问性使其成为 Web 开发的理想选择。
+- **Web 开发**：在网站上创建动态、交互式功能（例如 YouTube 预览、Amazon 的 Look Inside 功能）必不可少。
+- **后端开发**：JavaScript 还可以通过 Node.js 在后端使用，从而允许使用单一语言进行全栈开发。
+- **多功能性**：除了 Web 开发之外，JavaScript 还可用于各种应用程序，例如在 Photoshop 或 Gmail 中自动执行任务。
+
+**样式优先级**：
+   - 样式优先级顺序：行内样式 > 内嵌样式 > 外部样式 > 浏览器默认样式。
+   - 当多个样式冲突时，优先级高的样式将覆盖优先级低的样式。
+
+**高级选择器**：
+   - 后代选择器（`A B`）：选择A元素内部的所有B元素，如`p strong`。
+   - 子元素选择器（`A > B`）：选择A元素的直接子元素B，如`p > strong`。
+   - 相邻兄弟选择器（`A + B`）：选择紧接在A元素之后的同级B元素，如`h2 + p`。
+
+ **属性选择器**：
+   - 根据元素的属性及属性值来选择元素，如`img[src*="user_fig"]`。   
+   
+    *= means "contains".
+    It matches any element where the attribute includes the given string anywhere within its value.
+	
+	**伪类选择器**：
+   - 用于选择处于特定状态的元素，如`:hover`、`:first-child`、`:nth-child(n)`等。
+   
+   **伪元素选择器**：
+   - 用于向文档中的特定位置插入内容并应用样式，如`::before`、`::after`、`::first-letter`、`::first-line`等。
+   
+   
+   CSS样式(I)文本样式**
+1. **文本属性**：
+   - `color`：设置文本颜色。
+   - `font-size`：设置字体大小。
+   - `font-weight`：设置字体粗细。
+   - `letter-spacing`：设置字符间距。
+   - `line-height`：设置行高。
+   - `text-align`：设置文本对齐方式。
+   - `text-decoration`：设置文本装饰线，如下划线、删除线等。
+
+2. **字体与单位**：
+   - `font-family`：设置字体系列。
+   - 支持多种单位，包括像素（px）、em、百分比（%）等。
+   
+	CSS样式(II)背景 超链接**
+1. **背景属性**：
+   - `background-color`：设置背景颜色。
+   - `background-image`：设置背景图像。
+   - `background-repeat`：设置背景图像是否重复及重复方式。
+   
+   
+   CSS样式(III)列表 表格**
+1. **列表样式**：
+   - `list-style-type`：设置列表项标记的类型，如disc、circle、square等。
+   - `list-style-position`：设置列表项标记的位置，如inside、outside。
+   - `list-style-image`：使用图像作为列表项标记。
+
+2. **表格样式**：
+   - 通过`border`属性设置表格边框。
+   - 使用`width`和`height`属性设置表格的宽度和高度。
+   - `border-collapse`属性用于设置表格边框是否合并为一个单一的边框。
+
+3. **表格样式进阶**：
+   - 可以使用`:nth-child(odd|even)`选择器为表格的奇数行或偶数行设置不同的样式。
+   - 通过CSS可以精确控制表格的外观，包括边框颜色、宽度、单元格间距等。

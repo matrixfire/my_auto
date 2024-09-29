@@ -1,0 +1,231 @@
+
+
+
+django-admin startproject PROJECT_NAME
+cd PROJECT_NAME
+python manage.py startapp APP_NAME
+
+
+from django.http import HttpResponse
+from django.conf import settings
+from django.conf.urls.static import static
+from django.shortcuts import get_object_or_404
+from datetime import date
+from django.contrib.auth.models import User
+from blog.models import Post
+from .models import Post
+from django.db.models import Q
+from .forms import EmailPostForm
+from django.shortcuts import render, get_object_or_404
+from .models import Post
+
+
+
+# Django forms
+class NewTaskForm(forms.Form):
+    task = forms.CharField(label="New Task")
+
+
+# view usages
+tasks = []
+def post_share(request, post_id):
+    # Retrieve post by id
+    post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
+    
+    if request.method == 'POST':
+        # Form was submitted
+        form = EmailPostForm(request.POST)
+        if form.is_valid():
+            # Form fields passed validation
+            cd = form.cleaned_data
+	    tasks.append(cd["email"])	
+            # ... send email
+            return HttpResponseRedirect(reverse("tasks:index"))
+
+    else:
+        form = EmailPostForm()
+	return HttpResponse("<h1 style=\"color:blue\">Hello, world!</h1>")
+    
+    return render(request, 'blog/post/share.html', {'post': post, 'form': form})
+
+
+
+
+# admin
+ @admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title', 'slug', 'author', 'publish', 'status', 'price', 'available']  # Ensure 'price' and 'available' are in list_display
+    list_filter = ['status', 'created', 'publish', 'author']
+    list_editable = ['price', 'available']  # Fields must be in list_display as well
+    search_fields = ['title', 'body']
+    prepopulated_fields = {'slug': ('title',)}
+    raw_id_fields = ['author']
+    date_hierarchy = 'publish'
+    ordering = ['status', 'publish']
+    show_facets = admin.ShowFacets.ALWAYS
+
+
+# static files
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# About ORM
+# 0. Retrieve the user with username 'admin'
+user = User.objects.get(username='admin')
+post = Post.objects.get(id=1) # Retrieve the Post object with id 1
+
+# 1. Creating objects
+# Create a Post object with title 'A' and author 'user'
+post = Post(title='A', author=user) 
+post.save()  # Save the Post object to the database
+
+# Create a Post object with title 'B' and save it directly
+Post.objects.create(title='B')
+
+# Get or create a User object with username 'user2'
+user, created = User.objects.get_or_create(username='user2')
+
+# 2. Updating objects
+# Update the title of the post
+post.title = 'New title'
+post.save()  # Save the changes to the database
+
+# 3. Retrieving objects
+
+Post.objects.all()[:5] # Retrieve the first 5 Post objects
+Post.objects.order_by('?')[0] # Retrieve a random Post object
+Post.objects.order_by('author', '-title') # Retrieve all Post objects ordered by author (ascending) and title (descending)
+
+# 4. Deleting objects
+post.delete() # delete it
+
+# 5. Advanced Queries
+# Check if any Post objects exist that were published after January 1, 2024,
+# have an author with username 'admin', and do not have a title starting with 'Why'
+
+
+Post.objects.filter(publish__date__gt=date(2024, 1, 1)) \
+    .filter(author__username='admin') \
+    .exclude(title__startswith='Why') \
+    .exists()
+
+
+# Create Q objects for titles starting with 'who' or 'why'
+starts_who = Q(title__istartswith='who')
+starts_why = Q(title__istartswith='why')
+
+# Count the number of Post objects with titles starting with 'who' or 'why'
+Post.objects.filter(starts_who | starts_why).count()
+
+
+
+
+<form action="{% url "blog:post_comment" post.id %}" method="post">
+  from blog.models import Post
+  {% csrf_token %}
+  <p><input type="submit" value="Click!"></p>
+</form>
+
+
+
+# {{ post.body|truncatewords:30|linebreaks }}  
+# {{ post.tags.all|join:", " }}
+
+{% for tag in post.tags.all %}
+    <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+        {{ tag.name }}
+        {{ tag.date_added|date:'M d, Y H:i' }}
+    </a>{% if not forloop.last %}, {% endif %}
+{% empty %}
+    <p>There are no tags yet.</p>
+{% endfor %}
+
+
+ <form action="{% url 'tasks:add'
+ method="post" %}">
+ {% csrf token %}
+ {{ form.as_div }}
+ <button name="submit">Log in</button>
+ </form>
+
+
+
+
+
+
+name = models.CharField(max_length=200)
+slug = models.SlugField(max_length=200, unique=True)
+description = models.TextField(blank=True)
+category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+price = models.DecimalField(max_digits=10, decimal_places=2)
+available = models.BooleanField(default=True)
+created = models.DateTimeField(auto_now_add=True)
+updated = models.DateTimeField(auto_now=True)
+
+
+
+class Meta:
+    ordering = ['name']
+    indexes = [
+        models.Index(fields=['name']),
+    ]
+    verbose_name = 'category'
+    verbose_name_plural = 'categories'
+
+
+def get_absolute_url(self):
+    return reverse('shop:product_list_by_category', args=[self.slug])
+
+
+# request.session is like a dict
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+        {% endblock %}
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
+
+
+
+
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"> <img src="{% static 'fuckimages/ie8-panel/warning_bar_0000_us.jpg' %}" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <!-- Page-->

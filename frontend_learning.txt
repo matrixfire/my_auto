@@ -1,0 +1,825 @@
+*html
+id/class
+input: type, name, value, placeholder, autofocus
+
+ <strong>bold</strong>
+ <i>italicized</i>
+ <br/>
+ table-thead/tbody-tr-th/td
+<table>
+    <thead>
+        <tr>
+            <th>Ocean</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pacific</td>
+        </tr>
+    </tbody>
+</table>
+
+*css 
+
+<link rel="stylesheet" href="styles.css">
+
+color: blue; 
+text-align: center;
+
+
+
+
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+Now, we also have to deal with the problem of potentially conflicting CSS. What happens when a header should be red based on its class but blue based on its id? CSS has a specificity order that goes:
+1, In-line styling
+2, id
+3, class
+4, element type
+
+
+
+Css selectors! Here's the information formatted as a list:
+
+- **Multiple Element Selector**
+  - *Example:* `div, p, span { ... }`
+  - *Description:* Selects multiple HTML elements.
+
+- **Descendant Selector**
+  - *Example:* `div p { ... }`
+  - *Description:* Selects all elements that are descendants of a specified element.
+
+- **Child Selector**
+  - *Example:* `div > p { ... }`
+  - *Description:* Selects all direct children of a specified element.
+
+- **Adjacent Sibling Selector**
+  - *Example:* `h2 + p { ... }`
+  - *Description:* Selects an element that is immediately preceded by a specified element.
+
+- **Attribute Selector**
+  - *Example:* `input[type="text"] { ... }`
+  - *Description:* Selects elements based on the presence or value of their attributes.
+
+- **Pseudoclass Selector**
+  - *Example:* `a:hover { ... }`
+  - *Description:* Selects elements based on their state or position.
+
+- **Pseudoelement Selector**
+  - *Example:* `p::first-line { ... }`
+  - *Description:* Selects parts of an element rather than whole elements.
+
+Feel free to use this list as needed!
+
+-----------------------------------------------------
+*Events
+<button onclick="some_function()">Click Here</button>
+document.querySelector('button').onclick = some_function;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Some code here
+});
+
+
+
+
+For onsubmit evert: We often add the line return false. 
+This prevents the default submission of the form which involves either reloading the current page or redirecting to a new one.
+-----------------------------------------------------
+*Variables and Strings
+https://www.programiz.com/javascript/let-vs-var
+// Variables
+Note: The variables declared inside a function will be function scoped for both var and let.
+
+let: used to define a variable that is limited in scope to the current block such as a function or loop
+const: used to define a value that will not change
+
+
+
+for (let j = 0; j < 3; j++) { // can't use var, or outout all 3
+  setTimeout(function() {
+    console.log(j); // Outputs 0, 1, 2 with 1-second delay for each
+  }, 1000);
+}
+
+<script>
+  // Global scope
+  let globalVar = 1;
+  const globalConst = 2;
+
+  if (true) {
+    // Block scope within if statement
+    let blockScopedVar = 42;
+    const blockScopedConst = 50;
+    alert(blockScopedVar); // This works
+  }
+
+  alert(globalVar); // This works
+  alert(globalConst); // This works
+  // alert(blockScopedVar); // ReferenceError: blockScopedVar is not defined
+
+  {
+    // Block scope within standalone curly braces
+    let anotherBlockScopedVar = 100;
+    alert(anotherBlockScopedVar); // This works
+  }
+
+  // alert(anotherBlockScopedVar); // ReferenceError: anotherBlockScopedVar is not defined
+</script>
+
+alert('Hello, world!');
+
+
+
+
+// Local Storage
+localStorage.getItem(key): This function searches for an entry in local storage with a given key, and returns the value associated with that key.
+localStorage.setItem(key, value): This function sets an entry in local storage, associating the key with a new vlaue.
+-----------------------------------------------------
+
+Arrays
+// Creating an array
+let bikes = ['trek', 'redline', 'giant'];
+
+// Accessing elements
+let firstBike = bikes[0];
+let lastBike = bikes[bikes.length - 1];
+
+// Looping through an array
+for (let bike of bikes) {
+    console.log(bike);
+}
+
+
+
+// Making numerical arrays
+let squares = [];
+for (let x = 1; x <= 10; x++) {
+    squares.push(x ** 2);
+}
+
+
+
+Conditionals
+// If statements
+let age = 18;
+if (age >= 18) {
+    console.log("You can vote!");
+}
+
+// If-else statements
+let ticketPrice;
+if (age < 4) {
+    ticketPrice = 0;
+} else if (age < 18) {
+    ticketPrice = 10;
+} else if (age < 65) {
+    ticketPrice = 40;
+} else {
+    ticketPrice = 15;
+}
+
+-----------------------------------------------------
+*Objects (Dictionaries in Python)
+
+// Creating an object
+let alien = { color: 'green', points: 5 };
+
+// Accessing values
+console.log(`The alien's color is ${alien.color}.`);
+
+// Adding a new key-value pair
+alien.x_position = 0;
+
+// Looping through all key-value pairs
+let favNumbers = { eric: 7, ever: 4, erin: 47 };
+for (let name in favNumbers) {
+    console.log(`${name} loves ${favNumbers[name]}.`);
+}
+
+// Looping through all keys
+for (let name of Object.keys(favNumbers)) {
+    console.log(`${name} loves a number.`);
+}
+
+// Looping through all values
+for (let number of Object.values(favNumbers)) {
+    console.log(`${number} is a favorite.`);
+}
+
+
+
+
+-----------------------------------------------------
+
+*querySelector
+
+const header = document.querySelector('h1');
+header.innerHTML = 'Hello!';
+
+document.querySelector("#hello").innerHTML
+document.querySelector("#hello").value
+document.querySelector("#hello").style.color
+document.querySelector("#hello").dataset.SOMETHING   (data-SOMETHING attribute of HTML elements)
+document.querySelector("#hello").disable = true;
+document.querySelector("#hello").value.length
+document.querySelector('#tasks').append(li);
+
+
+
+
+
+const li = document.createElement('li');
+
+
+<h1 id="hello">Hello</h1>
+<button data-color="red">Red</button>
+<button data-color="blue">Blue</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button').forEach(function(button) {
+        button.onclick = function() {
+            document.querySelector("#hello").style.color = button.dataset.color;
+        }
+    });
+    });
+</script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('select').onchange = function() {
+            document.querySelector('#hello').style.color = this.value;
+        }
+    });
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Count</title>
+        <script>
+            function hello() {
+                const header = document.querySelector('h1');
+                if (header.innerHTML === 'Hello!') {
+                    header.innerHTML = 'Goodbye!';
+                }
+                else {
+                    header.innerHTML = 'Hello!';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Notice that in JavaScript, we use === as a stronger comparison between two items which also checks that the objects are of the same type. We typically want to use === whenever possible.</h1>
+        <button onclick="hello()">Click Here</button>
+    </body>
+</html>
+
+-----------------------------------------------------
+User Input
+
+// Prompting for a value
+let name = prompt("What's your name?");
+console.log(`Hello, ${name}!`);
+
+// Prompting for numerical input
+let age = prompt("How old are you?");
+age = parseInt(age);
+
+let pi = prompt("What's the value of pi?");
+pi = parseFloat(pi);
+
+
+While Loops
+
+// Simple while loop
+let currentValue = 1;
+while (currentValue <= 5) {
+    console.log(currentValue);
+    currentValue++;
+}
+
+// Letting the user choose when to quit
+let msg = '';
+while (msg !== 'quit') {
+    msg = prompt("What's your message?");
+    if (msg !== 'quit') {
+        console.log(msg);
+    }
+}
+
+-----------------------------------------------------
+Functions
+// Simple function
+function greetUser() {
+    console.log("Hello!");
+}
+greetUser();
+
+// Passing an argument
+function greetUser(username) {
+    console.log(`Hello, ${username}!`);
+}
+greetUser('jesse');
+
+// Default values for parameters
+function makePizza(topping = 'pineapple') {
+    console.log(`Have a ${topping} pizza!`);
+}
+makePizza();
+makePizza('mushroom');
+
+// Returning a value
+function addNumbers(x, y) {
+    return x + y;
+}
+let sum = addNumbers(3, 5);
+console.log(sum);
+
+
+setInterval(count, 1000);
+
+Parameters are placeholders for values that the function will operate on.
+Arguments are the actual values passed to the function's parameters during a call.
+Functions can have side effects, such as modifying external variables or printing to the console, which can be intentional or unintentional.
+Functions that take other functions as arguments or return functions as their output, Examples include setTimeout, which delays function execution.
+
+// Using an array method with a callback
+let numbers = [1, 2, 3, 4, 5];
+let squares = numbers.map(x => x * x);
+console.log(squares); // [1, 4, 9, 16, 25]
+
+
+fetch('https://api.exchangeratesapi.io/latest?base=USD')
+    .then(response => response.json())
+    .then(data => {
+        // ... (code to handle the response data)
+    })
+    .catch(error => {
+        console.log('Error:', error);
+    });
+
+-----------------------------------------------------
+Classes
+// Creating a dog class
+class Dog {
+    constructor(name) {
+        this.name = name;
+    }
+    sit() {
+        console.log(`${this.name} is sitting.`);
+    }
+}
+let myDog = new Dog('Peso');
+console.log(`${myDog.name} is a great dog!`);
+myDog.sit();
+
+// Inheritance
+class SARDog extends Dog {
+    constructor(name) {
+        super(name);
+    }
+    search() {
+        console.log(`${this.name} is searching.`);
+    }
+}
+let mySARDog = new SARDog('Willie');
+console.log(`${mySARDog.name} is a search dog.`);
+mySARDog.sit();
+mySARDog.search();
+
+
+
+Working with Files
+
+
+// Reading the contents of a file
+const path = 'siddhartha.txt'; // Assuming file path
+const contents = readText(path);
+const lines = contents.split('\n');
+for (let line of lines) {
+    console.log(line);
+}
+
+// Writing to a file
+const journalPath = 'journal.txt'; // Assuming file path
+const message = 'I love programming.';
+writeText(journalPath, message);
+
+
+Exceptions
+// Catching an exception
+let prompt = "How many tickets do you need? ";
+let numTickets = input(prompt);
+try {
+    numTickets = parseInt(numTickets);
+} catch (error) {
+    console.log("Please try again.");
+} else {
+    console.log("Your tickets are printing.");
+}
+
+
+
+
+
+<button onclick="hello()">Click Here</button>
+
+
+button.addEventListener('click', function() {
+    alert('Button clicked!');
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('form').onsubmit = function() {
+
+        // Send a GET request to the URL
+        fetch('https://api.exchangeratesapi.io/latest?base=USD')
+        // Put response into json form
+        .then(response => response.json())
+        .then(data => {
+            // Get currency from user input and convert to upper case
+            const currency = document.querySelector('#currency').value.toUpperCase();
+
+            // Get rate from data
+            const rate = data.rates[currency];
+
+            // Check if currency is valid:
+            if (rate !== undefined) {
+                // Display exchange on the screen
+                document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`;
+            }
+            else {
+                // Display error on the screen
+                document.querySelector('#result').innerHTML = 'Invalid Currency.';
+            }
+        })
+        // Catch any errors and log them to the console
+        .catch(error => {
+            console.log('Error:', error);
+        });
+        // Prevent default submission
+        return false;
+    }
+});
+
+
+
+
+
+
+// JavaScript code for dynamically loading data from a server without refreshing the entire HTML page.
+
+// Disadvantage: The URL remains less informative when switching between sections.
+
+// Using JavaScript History API to update the URL and browser history.
+
+// Event listener for the back arrow, showing the previous section when clicked
+window.onpopstate = function(event) {
+    // Log the section from the state
+    console.log(event.state.section);
+    // Show the section
+    showSection(event.state.section);
+}
+
+// Function to fetch and display a section
+function showSection(section) {
+    // Fetch the content of the section from the server
+    fetch(`/sections/${section}`)
+        .then(response => response.text())
+        .then(text => {
+            // Log the fetched text
+            console.log(text);
+            // Set the innerHTML of the content div to the fetched text
+            document.querySelector('#content').innerHTML = text;
+        });
+}
+
+// Event listener for when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listener for each button
+    document.querySelectorAll('button').forEach(button => {
+        // Click event for each button
+        button.onclick = function() {
+            // Get the section from the button's dataset
+            const section = this.dataset.section;
+
+            // Add the current state to the browser history
+            history.pushState({ section: section }, "", `section${section}`);
+            
+            // Show the selected section
+            showSection(section);
+        };
+    });
+});
+
+
+
+
+镜像
+https://blog.csdn.net/qq_43940789/article/details/131449710
+
+
+
+The provided JavaScript code demonstrates several fundamental concepts in web development and JavaScript. Here's what we can learn from the code:
+
+1. **Event Handling:**
+   - The code uses the `addEventListener` method to wait for the "DOMContentLoaded" event, ensuring that the JavaScript code executes after the HTML document has fully loaded.
+
+   ```javascript
+   document.addEventListener('DOMContentLoaded', function() {
+     // ... (JavaScript code here)
+   });
+   ```
+
+   - It also shows the use of event listeners for handling user interactions, such as the "keyup" event on the input field and the "submit" event on the form.
+
+2. **DOM Manipulation:**
+   - The code demonstrates how to interact with the Document Object Model (DOM) by selecting and manipulating HTML elements. It uses `document.querySelector` to select elements and `element.innerHTML` to modify their content.
+
+   ```javascript
+   const submit = document.querySelector('#submit');
+   const newTask = document.querySelector('#task');
+
+   const li = document.createElement('li');
+   li.innerHTML = task;
+   document.querySelector('#tasks').append(li);
+   ```
+
+3. **Conditional Statements:**
+   - Conditional statements are used to enable or disable the submit button based on the length of the input value. This shows how to use `if` and `else` statements for making decisions in code.
+
+   ```javascript
+   if (newTask.value.length > 0) {
+     submit.disabled = false;
+   } else {
+     submit.disabled = true;
+   }
+   ```
+
+4. **Form Submission Handling:**
+   - The code includes logic for handling form submissions. It prevents the default form submission behavior using `return false;` in the "submit" event handler.
+
+   ```javascript
+   document.querySelector('form').onsubmit = () => {
+     // ... (form submission handling code)
+     return false;
+   };
+   ```
+
+5. **Creating and Appending Elements:**
+   - The code demonstrates how to create new HTML elements using `document.createElement` and append them to the DOM using `element.append`.
+
+   ```javascript
+   const li = document.createElement('li');
+   li.innerHTML = task;
+   document.querySelector('#tasks').append(li);
+   ```
+
+6. **Disabling and Enabling Form Elements:**
+   - The code showcases how to disable and enable the submit button based on user input, enhancing the user interface to provide feedback.
+
+   ```javascript
+   submit.disabled = true; // Initial state
+   ```
+
+   ```javascript
+   submit.disabled = false; // Enabling the submit button
+   ```
+
+7. **Clearing Input Fields:**
+   - There's code to clear the input field after a task is submitted.
+
+   ```javascript
+   newTask.value = ''; // Clearing the input field
+   ```
+
+Overall, the code provides a practical example of building a simple task management application with user interaction, form handling, and DOM manipulation. It serves as a foundation for understanding common web development patterns and techniques.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dockerfile
+
+FROM python:3
+COPY .  /usr/src/app
+WORKDIR /usr/src/app
+RUN pip install -r requirements.txt
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+
+docker-compose.yml
+
+version: '3'
+
+services:
+    db:
+        image: postgres
+
+    web:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8000:8000"
+
+
+
+docker exec -it CONTAINER_ID bash -l
+
+
+
+Commands:
+Build a docker image:
+docker build -t [tag] [dockerfile position]
+
+Create and run Docker container
+docker run -d -p [host port]:[container port] [docker image] 
+
+How to see all images
+docker images
+
+How to see all containers
+docker ps
+
+
+
+
+docker build -t welcome-to-docker .
+The -t flag tags your image with a name. (welcome-to-docker in this case). And the . lets Docker know where it can find the Dockerfile.
+
+
+
+
+
+
+
+
+
+
+
+
+redis-server.exe redis.windows.conf # 后面的那个 redis.windows.conf 可以省略，如果省略，会启用默认的。
+redis-cli.exe -h 127.0.0.1 -p 6379
+
+
+redis-cli.exe -a redisredis -h 127.0.0.1 -p 6379
+
+redis-cli -a redisredis -h 172.29.144.1 -p 6379
+redis-cli -a redisredis -h 192.168.2.16 -p 6379
+
+redis-server --service-install redis.windows-service.conf --loglevel verbose
+redis-server --service-uninstall
+
+
+redis-server --service-start
+redis-server --service-stop
+
+
+172.29.144.1
+
+set myKey abc
+get myKey
+
+
+redis-server --service-stop -p 6391
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+React
+
+
+Sure, let's extract the key points related to React from your HTML code:
+
+1. **React Script Tags:**
+   - React and ReactDOM are included using script tags with the specified versions.
+   - Babel Standalone is included for JSX transformation.
+
+   ```html
+   <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+   <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+   ```
+
+2. **React Components:**
+   - Two functional components are defined: `Hello` and `App`.
+   - `Hello` component takes `props` and renders a greeting message.
+   - `App` component uses `useState` hook to manage state.
+
+   ```javascript
+   function Hello(props) {
+       return (
+           <h1>Hello, {props.name}!</h1>
+       );
+   }
+
+   function App() {
+       // ... (state and functions using useState)
+   }
+   ```
+
+3. **Conditional Rendering:**
+   - The `App` component conditionally renders either a win screen or a problem based on the `state.score`.
+
+   ```javascript
+   if (state.score === 10) {
+       return renderWinScreen();
+   } else {
+       return renderProblem();
+   }
+   ```
+
+4. **State Handling:**
+   - State is managed using the `useState` hook in the `App` component.
+   - The state includes `num1`, `num2`, `response`, `score`, and `incorrect`.
+   - State is updated using the `setState` function.
+
+   ```javascript
+   const [state, setState] = React.useState({
+       num1: 1,
+       num2: 1,
+       response: "",
+       score: 0,
+       incorrect: false
+   });
+   ```
+
+5. **Event Handling:**
+   - Events like key press and input change are handled using functions (`inputKeyPress` and `updateResponse`).
+   - State is updated based on user input, and the UI is re-rendered accordingly.
+
+   ```javascript
+   function inputKeyPress(event) {
+       // ... (handling Enter key press and updating state)
+   }
+
+   function updateResponse(event) {
+       // ... (updating response in state)
+   ```
+
+6. **Rendering JSX:**
+   - JSX is used for rendering UI elements in both `Hello` and `App` components.
+
+   ```javascript
+   return (
+       <div>
+           <Hello name="Bill"/>
+           <div className={state.incorrect ? "incorrect" : ""} id="problem">
+               {state.num1} + {state.num2}
+           </div>
+           <input onKeyPress={inputKeyPress} onChange={updateResponse} autoFocus={true} value={state.response} />
+           <div>Score: {state.score}</div>
+       </div>
+   )
+   ```
+
+These are the key React-related points extracted from your HTML code.
+
+
+
+独立创建了一个电商博客网站， 网站实现了b2c电商网站的全部功能，
+个人独立从项目立项，需求分析，原型设计，架构设计，数据库设计，模块代码实现和单元测试，UI设计，前端设计，最后到代码整合，集成测试，到最后的网站发布。功能实现包括用户模块，商品模块，购物车模块，和订单模块。
+
+
+
+
+
+
+
