@@ -289,15 +289,15 @@ def add_logo(background_path, logo_path, output_path, position="top-left", size_
     background.save(output_path, format="PNG")
 
 # Example usage
-background_image_path = "G:/x/background1.png"
+background_image_path = r"C:\Users\Administrator\Desktop\reobrix_092901.png"
 logo_image_path = "G:/x/logo.png"
-output_image_path = "G:/x/with_logo.png"
+output_image_path = r"C:\Users\Administrator\Desktop\with_logo.png"
 
 # Add the logo to the top-left corner by default
-add_logo(background_image_path, logo_image_path, output_image_path)
+add_logo(background_image_path, logo_image_path, output_image_path, position="top-left", size_fraction=0.1)
 
 # Add the logo to the bottom-right corner
-add_logo(background_image_path, logo_image_path, output_image_path, position="top-left", size_fraction=0.1)
+# add_logo(background_image_path, logo_image_path, output_image_path, position="top-left", size_fraction=0.1)
 
 
 

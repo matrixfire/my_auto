@@ -264,17 +264,14 @@ def process_folders(src_folder, dest_base_folder):
                 
                 # Find the first subfolder inside the deepest "详情" folder
                 first_subfolder = get_first_subfolder(details_folder)
-                if first_subfolder:
-                    first_subfolder_path = os.path.join(details_folder, first_subfolder)
-                    print(f"First subfolder inside deepest details folder: {first_subfolder_path}")
-                    
-                    # Define the destination folder path based on the subfolder name
-                    dest_folder = os.path.join(dest_base_folder, subfolder)
-                    
-                    # Copy all images from the first subfolder to the destination folder
-                    copy_images(first_subfolder_path, dest_folder)
-                else:
-                    print(f"No subfolders found in {details_folder}")
+                first_subfolder_path = os.path.join(details_folder, first_subfolder) if first_subfolder else details_folder
+                print(f"First subfolder inside deepest details folder: {first_subfolder_path}")
+                
+                # Define the destination folder path based on the subfolder name
+                dest_folder = os.path.join(dest_base_folder, subfolder)
+                
+                # Copy all images from the first subfolder to the destination folder
+                copy_images(first_subfolder_path, dest_folder)
             else:
                 print(f"No details folder found in {subfolder_path}")
 
@@ -285,3 +282,4 @@ if __name__ == "__main__":
 
     # Call the main function to start processing the folders
     process_folders(src_folder, dest_base_folder)
+ 
