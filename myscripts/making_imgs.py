@@ -289,7 +289,7 @@ def add_logo(background_path, logo_path, output_path, position="top-left", size_
     background.save(output_path, format="PNG")
 
 # Example usage
-background_image_path = r"C:\Users\Administrator\Desktop\reobrix_092901.png"
+background_image_path =r"G:\x\t2\新产品\微信图片_20240926174546.jpg"
 logo_image_path = "G:/x/logo.png"
 output_image_path = r"C:\Users\Administrator\Desktop\with_logo.png"
 
