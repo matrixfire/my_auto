@@ -38,11 +38,11 @@ def images_to_pdf(images_path, output_pdf_path):
     print(f"Combined images into PDF and saved to '{output_pdf_path}'.")
 
 if __name__ == "__main__":
-    # Define your paths
-    images_path = r"G:\x\t2\t"
-    output_pdf_path = r"G:\x\t2\t\combined_images.pdf"
+    # Get paths from user input
+    images_path = input("Enter the path for images: ").strip().strip('"')
+    output_pdf_path = input("Enter the path for the output PDF: ").strip().strip('"')
 
-    images_to_pdf(images_path, output_pdf_path)
+    images_to_pdf(images_path, os.path.join(output_pdf_path, "combined_images.pdf"))
 
 
 

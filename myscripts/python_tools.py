@@ -1278,13 +1278,60 @@ for chunk in completion:
 
 
 
+import os
+import pyperclip
 
+def generate_structure(path, ignore_folders=None, prefix=''):
+    """Generates a folder and file structure from the given path, ignoring specified folders and their contents."""
+    if ignore_folders is None:
+        ignore_folders = []
 
+    structure = []
+    if os.path.isdir(path):
+        # List all items in the directory
+        items = os.listdir(path)
+        items.sort()  # Sort items for a consistent output
+        
+        for item in items:
+            item_path = os.path.join(path, item)
+            # Check if the folder name matches any in ignore_folders
+            if item in ignore_folders:
+                continue  # Skip the ignored folder and its contents
 
+            # If it's a directory, add it and go deeper
+            if os.path.isdir(item_path):
+                structure.append(f"{prefix}├── {item}/")
+                # Recursively add the contents of the subdirectory
+                structure.append(generate_structure(item_path, ignore_folders, prefix + '│   '))
+            elif os.path.isfile(item_path):
+                # Add the file with a proper prefix
+                structure.append(f"{prefix}├── {item}")
+                
+        # Replace the last '├──' with '└──' for the last item
+        if structure:
+            structure[-1] = structure[-1].replace('├──', '└──', 1)
+    
+    return '\n'.join(structure)
 
+def copy_structure_to_clipboard(path=None, ignore_folders=None):
+    """Generates the structure of the folder and copies it to the clipboard, ignoring specified folders and their contents.
+    If no path is provided, it uses the clipboard content as the folder path."""
+    if path is None:
+        # Get the path from the clipboard
+        path = pyperclip.paste()
 
+    if os.path.exists(path):
+        # No need to convert to full paths, just use folder names
+        structure = generate_structure(path, ignore_folders)
+        # Copy the structure to the clipboard
+        pyperclip.copy(structure)
+        print("Folder structure copied to clipboard:")
+        print(structure)
+    else:
+        print(f"The path '{path}' does not exist.")
 
-
+# Example usage
+# copy_structure_to_clipboard(ignore_folders=['.git', 'myenv', '__pycache__'])
 
 
 
