@@ -197,10 +197,10 @@ background_image_path = "G:/x/t2/background1.png"  # Path to the background imag
 rand_background_image_path = "G:/x/t2/random_background.png"  # Path to save the randomly modified background image
 
 # Apply random color adjustments
-change_background_color_randomly(background_image_path, rand_background_image_path, base_red_factor=1.2, base_green_factor=1.3, base_blue_factor=1.5, base_brightness_factor=1.1, variability=0.3)
+change_background_color_randomly(background_image_path, rand_background_image_path, base_red_factor=1, base_green_factor=1, base_blue_factor=1, base_brightness_factor=1.1, variability=0.3)
 
-overlay_image_path1 = r"G:\产品图\66031\66031\66031详情页高清。\PNG\1.png"
-overlay_image_path2 = r"G:\产品图\66031\66031\66031详情页高清。\尺寸图\2.jpg"
+overlay_image_path1 = r"G:\产品图\793\PNG\1.png"
+overlay_image_path2 = r"G:\产品图\793\尺寸图\2.jpg"
 
 destination_folder = "G:/x/t2/"  # Path to the destination folder
 
