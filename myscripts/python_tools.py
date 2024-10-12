@@ -1336,6 +1336,73 @@ def copy_structure_to_clipboard(path=None, ignore_folders=None):
 
 
 
+
+
+import os
+import pyperclip as p
+from PIL import Image
+import pytesseract
+
+def extract_text_from_image(image_path):
+    # Open the image file
+    img = Image.open(image_path)
+    gray_img = img.convert('L')
+    # Specify the path to the Tesseract executable
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    # Use pytesseract to extract text
+    text = pytesseract.image_to_string(gray_img)
+    return text
+
+ocr = extract_text_from_image
+
+def write_to_txt_file(func):
+    def wrapper(folder_path=None):
+        result = func(folder_path)
+        # Determine the file path to save the text
+        txt_file_path = os.path.join(folder_path, "extracted_text.txt")
+        with open(txt_file_path, "w", encoding="utf-8") as txt_file:
+            txt_file.write(result)
+        print(f"Text written to {txt_file_path}")
+        return result
+    return wrapper
+
+@write_to_txt_file
+def extract_text_from_images_in_folder(folder_path=None):
+    def remove_empty_lines(text):
+        lines = text.split('\n')
+        non_empty_lines = filter(lambda line: line.strip(), lines)
+        return '\n'.join(non_empty_lines)
+
+    if folder_path is None:
+        folder_path = p.paste().strip()  # Get folder path from clipboard if not provided
+        print(f"Using clipboard content as folder path: {folder_path}")
+
+    all_text = ""
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            if file_path.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
+                try:
+                    all_text += (ocr(file_path) + '\n')
+                    print(f"{file_path} extracted.")
+                except PermissionError as e:
+                    print(f"Permission error for file {file_path}: {e}")
+                except Exception as e:
+                    print(f"Error processing file {file_path}: {e}")
+
+    result = remove_empty_lines(all_text)
+    p.copy(result)
+    print(result)
+    return result
+
+# Call the function with no arguments to use the clipboard content
+main = extract_text_from_images_in_folder
+
+
+
+
+
+
 '''
 prompts:
 
