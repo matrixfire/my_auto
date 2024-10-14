@@ -1337,7 +1337,6 @@ def copy_structure_to_clipboard(path=None, ignore_folders=None):
 
 
 
-
 import os
 import pyperclip as p
 from PIL import Image
@@ -1357,7 +1356,12 @@ ocr = extract_text_from_image
 
 def write_to_txt_file(func):
     def wrapper(folder_path=None):
+        if folder_path is None:
+            folder_path = p.paste().strip()  # Get folder path from clipboard if not provided
+            print(f"Using clipboard content as folder path: {folder_path}")
+        
         result = func(folder_path)
+        
         # Determine the file path to save the text
         txt_file_path = os.path.join(folder_path, "extracted_text.txt")
         with open(txt_file_path, "w", encoding="utf-8") as txt_file:
@@ -1372,10 +1376,6 @@ def extract_text_from_images_in_folder(folder_path=None):
         lines = text.split('\n')
         non_empty_lines = filter(lambda line: line.strip(), lines)
         return '\n'.join(non_empty_lines)
-
-    if folder_path is None:
-        folder_path = p.paste().strip()  # Get folder path from clipboard if not provided
-        print(f"Using clipboard content as folder path: {folder_path}")
 
     all_text = ""
     for root, dirs, files in os.walk(folder_path):
@@ -1397,8 +1397,6 @@ def extract_text_from_images_in_folder(folder_path=None):
 
 # Call the function with no arguments to use the clipboard content
 main = extract_text_from_images_in_folder
-
-
 
 
 
