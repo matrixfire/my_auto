@@ -1333,7 +1333,7 @@ def copy_structure_to_clipboard(path=None, ignore_folders=None):
 # Example usage
 # copy_structure_to_clipboard(ignore_folders=['.git', 'myenv', '__pycache__'])
 
-
+copy_structure_to_clipboard(ignore_folders=['.git', 'myenv', '__pycache__', 'static', 'media', 'migrations'])
 
 
 
