@@ -1255,6 +1255,17 @@ response = create_chat_completion(api_key, model, messages)
 print(response)
 
 
+
+
+
+
+
+
+
+
+
+
+
 # ai 1
 
 from openai import OpenAI
@@ -1274,6 +1285,22 @@ for chunk in completion:
 
 
 
+
+
+from openai import OpenAI
+API_KEY = "Bearer sk-NpvUKleI4BJv320"
+BASE_URL = "https://api.deepbricks.ai/v1/"
+client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+completion = client.chat.completions.create(
+  model="gpt-4o",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Hello!"}
+  ],
+  stream=True
+)
+for chunk in completion:
+  print(chunk.choices[0].delta)
 
 
 
@@ -1734,3 +1761,186 @@ This note provides a detailed guide on deploying a Django project to PythonAnywh
 
 
 '''
+
+################################################# FINAL VERSION 1
+
+
+from openai import OpenAI
+import pyperclip
+
+API_KEY = "Bearer sk-NpvUEGWHfd45VYyaOXwhWA40xZsHCrOg98SbdKleI4BJv320"
+BASE_URL = "https://api.deepbricks.ai/v1/"
+client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+
+def generate_chat_completion(messages, model="GPT-3.5-turbo", max_tokens=1024, n=1, stop=None, temperature=0.8, stream=True):
+    """
+    Generate a chat completion using OpenAI's API.
+
+    Args:
+        messages (list): A list of messages for the chat.
+        model (str): The model to use for the completion. Default is "GPT-3.5-turbo".
+        max_tokens (int): The maximum number of tokens to generate in the response.
+        n (int): Number of completions to generate for each prompt.
+        stop (str or list): The stopping sequence(s) where the API will stop generating further tokens.
+        temperature (float): Controls randomness in the output. Lower values make the output more deterministic.
+        stream (bool): Whether to stream the response. Default is True.
+
+    Returns:
+        None: Prints the complete response.
+    """
+    completion = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        max_tokens=max_tokens,
+        n=n,
+        stop=stop,
+        temperature=temperature,
+        stream=stream
+    )
+    
+    # Collecting the complete response
+    full_response = ""
+    for chunk in completion:
+        full_response += chunk.choices[0].delta.content if chunk.choices[0].delta.content else ""
+    
+    pyperclip.copy(full_response)
+    return full_response
+
+def main():
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."}
+    ]
+
+    print("Start chatting with the assistant (type 'exit' to stop):")
+
+    while True:
+        user_input = input("\nYou: ")
+        if user_input.lower() == 'exit':
+            print("Goodbye!")
+            break
+        
+        messages.append({"role": "user", "content": user_input})
+
+        # Generate the assistant's response
+        assistant_response = generate_chat_completion(messages)
+
+        # Print formatted output
+        print("\n" + "=" * 50)
+        print("Assistant:", assistant_response.strip())
+        print("=" * 50)
+
+if __name__ == "__main__":
+    main()
+
+
+
+################################################# FINAL VERSION 1
+
+
+import pyperclip
+from openai import OpenAI
+import time
+
+API_KEY = "Bearer sk-NpvUEGWHfd45VYyaOXwhWA40xZsHCrOg98SbdKleI4BJv320"
+BASE_URL = "https://api.deepbricks.ai/v1/"
+client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
+
+def generate_chat_completion(messages, model="GPT-3.5-turbo", max_tokens=1024, n=1, stop=None, temperature=0.8, stream=True):
+    """
+    Generate a chat completion using OpenAI's API.
+    
+    Args:
+        messages (list): A list of messages for the chat.
+        model (str): The model to use for the completion. Default is "GPT-3.5-turbo".
+        max_tokens (int): The maximum number of tokens to generate in the response.
+        n (int): Number of completions to generate for each prompt.
+        stop (str or list): The stopping sequence(s) where the API will stop generating further tokens.
+        temperature (float): Controls randomness in the output. Lower values make the output more deterministic.
+        stream (bool): Whether to stream the response. Default is True.
+    
+    Returns:
+        str: The assistant's response.
+    """
+    completion = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        max_tokens=max_tokens,
+        n=n,
+        stop=stop,
+        temperature=temperature,
+        stream=stream
+    )
+    
+    # Collecting the complete response
+    full_response = ""
+    for chunk in completion:
+        full_response += chunk.choices[0].delta.content if chunk.choices[0].delta.content else ""
+    
+    return full_response.strip()
+
+def clipboard_chat_(initial_prompt):
+    """
+    Start a chat session using clipboard input.
+    
+    Args:
+        initial_prompt (str): The initial prompt to set up the conversation.
+    
+    Returns:
+        None
+    """
+    messages = [{"role": "system", "content": initial_prompt}]
+    print("Chat session started. Press Enter to use clipboard text as input.")
+
+    while True:
+        input("Press Enter to get text from clipboard...")
+        
+        clipboard_text = pyperclip.paste()
+        if clipboard_text:
+            print(f"Using clipboard text: '{clipboard_text}'")
+            messages.append({"role": "user", "content": clipboard_text})
+
+            # Generate the assistant's response
+            assistant_response = generate_chat_completion(messages)
+
+            # Copy the response to clipboard
+            pyperclip.copy(assistant_response)
+            print("Assistant:", assistant_response)
+            print("Response copied to clipboard!")
+        else:
+            print("Clipboard is empty. Please copy some text.")
+
+
+def clipboard_chat(initial_prompt):
+    messages = [{"role": "system", "content": initial_prompt}]
+    print("Chat session started. Press Enter to use clipboard text as input.")
+
+    while True:
+        input("Press Enter to get text from clipboard...")
+        
+        clipboard_text = pyperclip.paste()
+        if clipboard_text:
+            print(f"Using clipboard text: '{clipboard_text}'")
+            messages.append({"role": "user", "content": clipboard_text})
+
+            # Limit the number of messages in the conversation history
+            if len(messages) > 6:  # 1 system + 5 user/bot messages
+                messages = messages[-6:]
+
+            # Generate the assistant's response
+            assistant_response = generate_chat_completion(messages)
+
+            # Copy the response to clipboard
+            pyperclip.copy(assistant_response)
+            print("Assistant:", assistant_response)
+            print("Response copied to clipboard!")
+        else:
+            print("Clipboard is empty. Please copy some text.")
+            
+
+def main():
+    input("Press Enter to set initalial prompt text from clipboard...")
+    initial_prompt = pyperclip.paste() or "You are a helpful assistant."
+    clipboard_chat(initial_prompt)
+
+if __name__ == "__main__":
+    main()
